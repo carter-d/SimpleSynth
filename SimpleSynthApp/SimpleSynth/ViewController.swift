@@ -8,7 +8,7 @@
 
 import UIKit
 
-var exampleSynth = Synth()
+//var exampleSynth = Synth()
 
 class ViewController: UIViewController {
 
@@ -23,24 +23,24 @@ class ViewController: UIViewController {
     }
 
     @IBAction func annoyingNoise(sender: AnyObject) {
-        exampleSynth.keyPressed = true
-        exampleSynth.playSineWave()
-        
+       // exampleSynth.keyPressed = true
+      //  exampleSynth.playSineWave()
+        FMSynthesizer.sharedSynth().play(440.0, modulatorFrequency: 679.0, modulatorAmplitude: 0.8)
     }
     
-    @IBAction func frequencyAdjust(sender: UISlider) {
-        exampleSynth.frequency = sender.value
-    }
-    
-    
-    @IBAction func stopNoise(sender: AnyObject) {
-        exampleSynth.pausePlayer()
-    }
-    
-    @IBAction func playNoisesIn5th(sender: AnyObject) {
-             exampleSynth.playSoundFromOsc()
-    }
-    
+//    @IBAction func frequencyAdjust(sender: UISlider) {
+//        exampleSynth.frequency = sender.value
+//    }
+//    
+//    
+//    @IBAction func stopNoise(sender: AnyObject) {
+//        exampleSynth.pausePlayer()
+//    }
+//    
+//    @IBAction func playNoisesIn5th(sender: AnyObject) {
+//             exampleSynth.playSoundFromOsc()
+//    }
+//    
 
 }
 

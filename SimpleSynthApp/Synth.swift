@@ -23,23 +23,27 @@ class Synth {
     var frequency: Float
     var sRate: Float
     var keyPressed: Bool
-
+    var fc: UInt32
+    var bufferLength: Int
     
     
     
     init(){
+        bufferLength = 2
+        fc = 2
         avEngine = AVAudioEngine()
         avPlayNode = AVAudioPlayerNode()
-        avBuffer = AVAudioPCMBuffer(PCMFormat: avPlayNode.outputFormatForBus(0), frameCapacity: 100)
-        avBuffer.frameLength = 100
+        avBuffer = AVAudioPCMBuffer(PCMFormat: avPlayNode.outputFormatForBus(0), frameCapacity: fc)
+        avBuffer.frameLength = UInt32(bufferLength)
         avMix = avEngine.mainMixerNode
         frequency = 261.6 // default to middle c
         sRate = 44100 // 44.1khz is a pretty standard sampling rate
         keyPressed = false
         
-        for(var i = 0; i<100; ++i){
+        for(var i = 0; i<bufferLength; ++i){
             let bufferFill = sinf((Float(i)*Float(M_PI*2)*frequency)/sRate)
             avBuffer.floatChannelData.memory[i] = bufferFill
+            //print(bufferFill)
         }
         
         avEngine.attachNode(avPlayNode)
@@ -58,9 +62,10 @@ class Synth {
     
     //play a note with a sine wave
     func playSineWave(){
-        for(var i = 0; i<100; ++i){
+        for(var i = 0; i<bufferLength; ++i){
             let bufferFill = sinf((Float(i)*Float(M_PI*2)*frequency)/sRate) //create a sine wave to fill the buffer
             avBuffer.floatChannelData.memory[i] = bufferFill
+              print(bufferFill)
         }
         avPlayNode.scheduleBuffer(avBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Loops, completionHandler: nil)
         self.avPlayNode.play()
@@ -68,7 +73,7 @@ class Synth {
     
     //trying to see if synth can let oscillator handle wave generating duty
     func playSoundFromOsc(){
-        let dummyInput: [Float] = [Float](count: 100, repeatedValue: 0)
+        let dummyInput: [Float] = [Float](count: bufferLength, repeatedValue: 0)
         var osc1 = Oscillator()
         osc1.inputWaveFormBuffer = dummyInput
         osc1.frequency = 261.6
@@ -78,16 +83,16 @@ class Synth {
         osc2.inputWaveFormBuffer = o1
         osc2.frequency = 261.6*1.498 //5th
         osc2.waveForm = BasicWaves.Sine
-        osc2.intensity = 0.1
+        osc2.intensity = 0
         var o2 = osc2.getOutput()
         var osc3 = Oscillator()
         osc3.inputWaveFormBuffer = o2
         osc3.frequency = Float(NoteFrequency.getFrequency(11)) //maj7th
         osc3.waveForm = BasicWaves.Sine
-        osc2.intensity = 1.5
+        osc2.intensity = 0
         
         var out = osc3.getOutput()
-        for(var i = 0; i<100; ++i){
+        for(var i = 0; i<bufferLength; ++i){
             avBuffer.floatChannelData.memory[i] = out[i]
         }
         avPlayNode.scheduleBuffer(avBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Loops, completionHandler: nil)
