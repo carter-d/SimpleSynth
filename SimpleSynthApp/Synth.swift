@@ -23,6 +23,7 @@ class Synth {
     var frequency: Float
     var sRate: Float
     var keyPressed: Bool
+
     
     
     
@@ -65,6 +66,33 @@ class Synth {
         self.avPlayNode.play()
     }
     
+    //trying to see if synth can let oscillator handle wave generating duty
+    func playSoundFromOsc(){
+        let dummyInput: [Float] = [Float](count: 100, repeatedValue: 0)
+        var osc1 = Oscillator()
+        osc1.inputWaveFormBuffer = dummyInput
+        osc1.frequency = 261.6
+        osc1.waveForm = BasicWaves.Sine
+        var o1 = osc1.getOutput()
+        var osc2 = Oscillator()
+        osc2.inputWaveFormBuffer = o1
+        osc2.frequency = 261.6*1.498 //5th
+        osc2.waveForm = BasicWaves.Sine
+        osc2.intensity = 0.1
+        var o2 = osc2.getOutput()
+        var osc3 = Oscillator()
+        osc3.inputWaveFormBuffer = o2
+        osc3.frequency = Float(NoteFrequency.getFrequency(11)) //maj7th
+        osc3.waveForm = BasicWaves.Sine
+        osc2.intensity = 1.5
+        
+        var out = osc3.getOutput()
+        for(var i = 0; i<100; ++i){
+            avBuffer.floatChannelData.memory[i] = out[i]
+        }
+        avPlayNode.scheduleBuffer(avBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Loops, completionHandler: nil)
+        self.avPlayNode.play()
+    }
     
     
     //pause audio output

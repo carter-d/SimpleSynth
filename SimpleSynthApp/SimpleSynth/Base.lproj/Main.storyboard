@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-bo-fA8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-bo-fA8">
                                 <rect key="frame" x="209" y="97" width="174" height="82"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="133" id="h2p-s1-tsg"/>
+                                    <constraint firstAttribute="width" constant="174" id="h2p-s1-tsg"/>
                                 </constraints>
                                 <state key="normal" title="play noise"/>
                                 <connections>
                                     <action selector="annoyingNoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j29-zT-cCC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-BM-zU3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-BM-zU3">
                                 <rect key="frame" x="232" y="187" width="129" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129" id="cdJ-ao-hyW"/>
@@ -38,22 +38,29 @@
                                     <action selector="stopNoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWy-tu-PyS"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="27.5" minValue="27.5" maxValue="4186" translatesAutoresizingMaskIntoConstraints="NO" id="Cv9-gB-03T">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="27.5" minValue="27.5" maxValue="4186" translatesAutoresizingMaskIntoConstraints="NO" id="Cv9-gB-03T">
                                 <rect key="frame" x="65" y="331" width="462" height="31"/>
                                 <connections>
                                     <action selector="frequencyAdjust:" destination="BYZ-38-t0r" eventType="valueChanged" id="fXz-OM-zcI"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ix-ST-Guu">
+                                <rect key="frame" x="236" y="64" width="120" height="30"/>
+                                <state key="normal" title="play noises in 5th"/>
+                                <connections>
+                                    <action selector="playNoisesIn5th:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fex-DW-QWl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Cv9-gB-03T" firstAttribute="centerX" secondItem="GK9-BM-zU3" secondAttribute="centerX" id="0tT-Ck-lp5"/>
                             <constraint firstItem="Cv9-gB-03T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="1ND-KI-ypT"/>
                             <constraint firstItem="1hm-bo-fA8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="77" id="Nfd-cv-PSv"/>
-                            <constraint firstItem="1hm-bo-fA8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S0X-Sm-hGJ"/>
+                            <constraint firstItem="1hm-bo-fA8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-4" id="S0X-Sm-hGJ"/>
                             <constraint firstItem="GK9-BM-zU3" firstAttribute="centerX" secondItem="1hm-bo-fA8" secondAttribute="centerX" id="Ye0-5h-qdZ"/>
                             <constraint firstItem="GK9-BM-zU3" firstAttribute="top" secondItem="1hm-bo-fA8" secondAttribute="bottom" constant="8" symbolic="YES" id="gIB-O1-82Y"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1hm-bo-fA8" secondAttribute="bottom" constant="426" id="ioL-jH-fCP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1hm-bo-fA8" secondAttribute="bottom" constant="421" id="ioL-jH-fCP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GK9-BM-zU3" secondAttribute="bottom" constant="366" id="rrt-YL-de8"/>
                             <constraint firstItem="Cv9-gB-03T" firstAttribute="top" secondItem="GK9-BM-zU3" secondAttribute="bottom" constant="97" id="tab-o9-smu"/>
                         </constraints>

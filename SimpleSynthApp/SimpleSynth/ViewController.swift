@@ -37,6 +37,10 @@ class ViewController: UIViewController {
         exampleSynth.pausePlayer()
     }
     
+    @IBAction func playNoisesIn5th(sender: AnyObject) {
+             exampleSynth.playSoundFromOsc()
+    }
+    
 
 }
 

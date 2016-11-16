@@ -13,6 +13,10 @@
 		688C6B701DD655E9004BE9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 688C6B6F1DD655E9004BE9CA /* Assets.xcassets */; };
 		688C6B731DD655E9004BE9CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688C6B711DD655E9004BE9CA /* LaunchScreen.storyboard */; };
 		688C6B7D1DD658A5004BE9CA /* Synth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688C6B7C1DD658A5004BE9CA /* Synth.swift */; };
+		71116E701DDC4F8B0033779C /* NoteFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E6F1DDC4F8B0033779C /* NoteFrequency.swift */; };
+		71116E721DDC53BD0033779C /* DummyKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E711DDC53BD0033779C /* DummyKeyboard.swift */; };
+		71116E741DDC54BE0033779C /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E731DDC54BE0033779C /* Oscillator.swift */; };
+		71116E761DDC58140033779C /* BasicWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E751DDC58140033779C /* BasicWaves.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		688C6B721DD655E9004BE9CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		688C6B741DD655E9004BE9CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		688C6B7C1DD658A5004BE9CA /* Synth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Synth.swift; path = ../Synth.swift; sourceTree = "<group>"; };
+		71116E6F1DDC4F8B0033779C /* NoteFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteFrequency.swift; sourceTree = "<group>"; };
+		71116E711DDC53BD0033779C /* DummyKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyKeyboard.swift; sourceTree = "<group>"; };
+		71116E731DDC54BE0033779C /* Oscillator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
+		71116E751DDC58140033779C /* BasicWaves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicWaves.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +65,12 @@
 			isa = PBXGroup;
 			children = (
 				688C6B7C1DD658A5004BE9CA /* Synth.swift */,
+				71116E6F1DDC4F8B0033779C /* NoteFrequency.swift */,
 				688C6B681DD655E9004BE9CA /* AppDelegate.swift */,
 				688C6B6A1DD655E9004BE9CA /* ViewController.swift */,
+				71116E711DDC53BD0033779C /* DummyKeyboard.swift */,
+				71116E731DDC54BE0033779C /* Oscillator.swift */,
+				71116E751DDC58140033779C /* BasicWaves.swift */,
 				688C6B6C1DD655E9004BE9CA /* Main.storyboard */,
 				688C6B6F1DD655E9004BE9CA /* Assets.xcassets */,
 				688C6B711DD655E9004BE9CA /* LaunchScreen.storyboard */,
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71116E721DDC53BD0033779C /* DummyKeyboard.swift in Sources */,
 				688C6B7D1DD658A5004BE9CA /* Synth.swift in Sources */,
 				688C6B6B1DD655E9004BE9CA /* ViewController.swift in Sources */,
+				71116E741DDC54BE0033779C /* Oscillator.swift in Sources */,
+				71116E761DDC58140033779C /* BasicWaves.swift in Sources */,
+				71116E701DDC4F8B0033779C /* NoteFrequency.swift in Sources */,
 				688C6B691DD655E9004BE9CA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +304,7 @@
 				688C6B791DD655E9004BE9CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
