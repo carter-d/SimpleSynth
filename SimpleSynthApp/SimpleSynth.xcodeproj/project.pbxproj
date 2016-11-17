@@ -18,6 +18,7 @@
 		71116E741DDC54BE0033779C /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E731DDC54BE0033779C /* Oscillator.swift */; };
 		71116E761DDC58140033779C /* BasicWaves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E751DDC58140033779C /* BasicWaves.swift */; };
 		71116E781DDCFDEF0033779C /* FMSynthDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E771DDCFDEF0033779C /* FMSynthDemo.swift */; };
+		71116E7A1DDD56CD0033779C /* SoundModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E791DDD56CD0033779C /* SoundModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		71116E731DDC54BE0033779C /* Oscillator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
 		71116E751DDC58140033779C /* BasicWaves.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicWaves.swift; sourceTree = "<group>"; };
 		71116E771DDCFDEF0033779C /* FMSynthDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMSynthDemo.swift; sourceTree = "<group>"; };
+		71116E791DDD56CD0033779C /* SoundModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundModule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				688C6B6A1DD655E9004BE9CA /* ViewController.swift */,
 				71116E711DDC53BD0033779C /* DummyKeyboard.swift */,
 				71116E731DDC54BE0033779C /* Oscillator.swift */,
+				71116E791DDD56CD0033779C /* SoundModule.swift */,
 				71116E751DDC58140033779C /* BasicWaves.swift */,
 				688C6B6C1DD655E9004BE9CA /* Main.storyboard */,
 				688C6B6F1DD655E9004BE9CA /* Assets.xcassets */,
@@ -161,6 +164,7 @@
 				71116E761DDC58140033779C /* BasicWaves.swift in Sources */,
 				71116E701DDC4F8B0033779C /* NoteFrequency.swift in Sources */,
 				688C6B691DD655E9004BE9CA /* AppDelegate.swift in Sources */,
+				71116E7A1DDD56CD0033779C /* SoundModule.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

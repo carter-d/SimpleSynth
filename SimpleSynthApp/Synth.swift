@@ -99,14 +99,14 @@ class Synth {
             osc1.waveForm = BasicWaves.Sine
             var osc2 = Oscillator()
             
-            osc2.intensity = 0.5
+            osc2.intensity = 0
             osc2.waveForm = BasicWaves.Sine
             var osc3 = Oscillator()
-            osc3.intensity = 300
+            osc3.intensity = 10
             osc3.waveForm = BasicWaves.Sine
             
             while true {
-                osc3.frequency = 0.2
+                osc3.frequency = 0.5
                
                 var currentBuffer = self.buffers[currentBufferIndex]
                 var leftChannelData = currentBuffer.floatChannelData[0]
@@ -115,7 +115,7 @@ class Synth {
                 for sampleIndex in 0...self.bufferLength-1{
                     osc1.frequency = osc3.getOutput(500, index: Int(totalSampleIndex))
                     // print(osc1.frequency)
-                    osc2.frequency = NoteFrequency.getFrequency(osc1.frequency!, stepsFromNote: 7)
+                    osc2.frequency = NoteFrequency.getFrequency(osc1.frequency, stepsFromNote: 7)
                     let osc1value = osc1.getOutput(0, index: Int(totalSampleIndex)) //create a sine wave to fill the buffer
                     let sampleValue = osc2.getOutput(osc1value,index: Int(totalSampleIndex))
                     leftChannelData[sampleIndex] = sampleValue
