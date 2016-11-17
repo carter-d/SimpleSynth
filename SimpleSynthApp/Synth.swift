@@ -107,14 +107,15 @@ class Synth {
             
             while true {
                 osc3.frequency = 0.2
-                osc1.frequency = osc3.getOutput(500, index: Int(totalSampleIndex))
-               // print(osc1.frequency)
-                osc2.frequency = NoteFrequency.getFrequency(osc1.frequency!, stepsFromNote: 7)
+               
                 var currentBuffer = self.buffers[currentBufferIndex]
                 var leftChannelData = currentBuffer.floatChannelData[0]
                 var rightChannelData = currentBuffer.floatChannelData[1]
                 dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
                 for sampleIndex in 0...self.bufferLength-1{
+                    osc1.frequency = osc3.getOutput(500, index: Int(totalSampleIndex))
+                    // print(osc1.frequency)
+                    osc2.frequency = NoteFrequency.getFrequency(osc1.frequency!, stepsFromNote: 7)
                     let osc1value = osc1.getOutput(0, index: Int(totalSampleIndex)) //create a sine wave to fill the buffer
                     let sampleValue = osc2.getOutput(osc1value,index: Int(totalSampleIndex))
                     leftChannelData[sampleIndex] = sampleValue
