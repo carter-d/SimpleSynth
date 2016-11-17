@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func annoyingNoise(sender: AnyObject) {
         exampleSynth.keyPressed = true
-        exampleSynth.playSoundFromConnectedModules()
+        exampleSynth.playSin()
         
     }
     
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func playNoisesIn5th(sender: AnyObject) {
-//             exampleSynth.playSoundFromOsc()
-    FMSynthesizer.sharedSynth().play(440.0, modulatorFrequency: 679.0, modulatorAmplitude: 0.8)
+            exampleSynth.playSoundFromModule()
+    //FMSynthesizer.sharedSynth().play(440.0, modulatorFrequency: 679.0, modulatorAmplitude: 0.8)
     }
 //    
 

@@ -52,12 +52,7 @@ class Synth {
         
     }
     
-    func playSoundFromConnectedModules(){
-        do {
-            try avEngine.start()
-        } catch {
-            print(error)
-        }
+    func playSin(){
         dispatch_async(queue){
         var totalSampleIndex:Float = 0
         var currentBufferIndex = 0
@@ -93,6 +88,61 @@ class Synth {
 
         
     }
+    func playSoundFromModule(){
+
+        dispatch_async(queue){
+            var totalSampleIndex:Float = 0
+            var currentBufferIndex = 0
+            var osc1 = Oscillator()
+            
+            osc1.intensity = 1
+            osc1.waveForm = BasicWaves.Sine
+            var osc2 = Oscillator()
+            
+            osc2.intensity = 0.5
+            osc2.waveForm = BasicWaves.Sine
+            var osc3 = Oscillator()
+            osc3.intensity = 300
+            osc3.waveForm = BasicWaves.Sine
+            
+            while true {
+                osc3.frequency = 0.2
+                osc1.frequency = osc3.getOutput(500, index: Int(totalSampleIndex))
+               // print(osc1.frequency)
+                osc2.frequency = NoteFrequency.getFrequency(osc1.frequency!, stepsFromNote: 7)
+                var currentBuffer = self.buffers[currentBufferIndex]
+                var leftChannelData = currentBuffer.floatChannelData[0]
+                var rightChannelData = currentBuffer.floatChannelData[1]
+                dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
+                for sampleIndex in 0...self.bufferLength-1{
+                    let osc1value = osc1.getOutput(0, index: Int(totalSampleIndex)) //create a sine wave to fill the buffer
+                    let sampleValue = osc2.getOutput(osc1value,index: Int(totalSampleIndex))
+                    leftChannelData[sampleIndex] = sampleValue
+                    rightChannelData[sampleIndex] = sampleValue
+                    totalSampleIndex = totalSampleIndex + 1
+                 //   print(sampleValue)
+                }
+                currentBuffer.frameLength = UInt32(self.bufferLength)
+                self.avPlayNode.scheduleBuffer(currentBuffer) {
+                    dispatch_semaphore_signal(self.semaphore)
+                    return
+                }
+                
+                currentBufferIndex = (currentBufferIndex + 1) % self.numberOfBuffers
+            }
+        }
+        do {
+            try self.avEngine.start()
+        }
+        catch{
+            print("can't start engine")
+        }
+        //  playerNode.pan = 0.8
+        avPlayNode.play()
+        
+        
+    }
+
     
     //play a note with a sine wave
 //    func playSineWave(){
