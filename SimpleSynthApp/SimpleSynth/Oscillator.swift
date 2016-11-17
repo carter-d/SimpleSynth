@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 class Oscillator: SoundModule{
-    var frequency: Float = 440
+    var frequency: Float = 0
     var waveForm: BasicWaves? = BasicWaves.Sine
     var samplingRate: Float = 44100
     var intensity: Float = 1
@@ -18,7 +18,7 @@ class Oscillator: SoundModule{
     var baseFrequency: Float?
     var baseIntensity: Float?
 
-    func getOutput(inputValue: Float,index: Int)->Float{
+    override func getOutput(inputValue: Float,index: Int)->Float{
         var outputWaveValue: Float = 0.0
         var freq = frequency
         var ints = self.intensity
@@ -45,6 +45,8 @@ class Oscillator: SoundModule{
                 outputWaveValue = inputValue + (squaref((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
             break
             case BasicWaves.Sawtooth:
+                break
+        case BasicWaves.Triangle:
                 break
         }
         

@@ -8,5 +8,7 @@
 
 import Foundation
 class SoundModule {
-    
+    func getOutput(inputValue: Float,index: Int)->Float{
+        return 0.0
+    }
 }

@@ -6,4 +6,4 @@
 //  Copyright © 2016 SimpleSynth. All rights reserved.
 //
 
-enum BasicWaves { case Sine; case Square; case Sawtooth;}
+enum BasicWaves { case Sine; case Square; case Sawtooth; case Triangle;}
