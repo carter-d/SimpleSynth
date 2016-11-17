@@ -66,7 +66,6 @@ class Synth {
                     leftChannelData[sampleIndex] = sampleValue
                     rightChannelData[sampleIndex] = sampleValue
                     totalSampleIndex = totalSampleIndex + 1
-                   // print(sampleValue)
                  }
                 currentBuffer.frameLength = UInt32(self.bufferLength)
                 self.avPlayNode.scheduleBuffer(currentBuffer) {
@@ -96,30 +95,33 @@ class Synth {
             var osc1 = Oscillator()
             
             osc1.intensity = 1
-            osc1.waveForm = BasicWaves.Sine
+            osc1.waveForm = BasicWaves.Square
             var osc2 = Oscillator()
             
-            osc2.intensity = 0
+            osc2.intensity = 1
             osc2.waveForm = BasicWaves.Sine
-            var osc3 = Oscillator()
-            osc3.intensity = 10
-            osc3.waveForm = BasicWaves.Sine
+        //    var osc3 = Oscillator()
+      //      osc3.frequency = 0.1
+    //        osc3.intensity = 10
+          
+         //   osc1.frequencyController = osc3
+         //  osc1.intensityController = osc2
+         //   osc2.frequency = 1
+            
             
             while true {
-                osc3.frequency = 0.5
-               
-                var currentBuffer = self.buffers[currentBufferIndex]
-                var leftChannelData = currentBuffer.floatChannelData[0]
-                var rightChannelData = currentBuffer.floatChannelData[1]
+                let currentBuffer = self.buffers[currentBufferIndex]
+                let leftChannelData = currentBuffer.floatChannelData[0]
+                let rightChannelData = currentBuffer.floatChannelData[1]
                 dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
                 for sampleIndex in 0...self.bufferLength-1{
-                    osc1.frequency = osc3.getOutput(500, index: Int(totalSampleIndex))
-                    // print(osc1.frequency)
-                    osc2.frequency = NoteFrequency.getFrequency(osc1.frequency, stepsFromNote: 7)
-                    let osc1value = osc1.getOutput(0, index: Int(totalSampleIndex)) //create a sine wave to fill the buffer
-                    let sampleValue = osc2.getOutput(osc1value,index: Int(totalSampleIndex))
+                    //osc2.frequency = NoteFrequency.getFrequency(osc1.frequency, stepsFromNote: 7)
+                    osc1.frequency = self.frequency
+                    osc2.frequency = NoteFrequency.getFrequency(self.frequency, stepsFromNote: 11)
+                    let sampleValue = osc2.getOutput(osc1.getOutput(0, index:Int(totalSampleIndex)),index: Int(totalSampleIndex))
                     leftChannelData[sampleIndex] = sampleValue
                     rightChannelData[sampleIndex] = sampleValue
+                   // print(sampleValue)
                     totalSampleIndex = totalSampleIndex + 1
                  //   print(sampleValue)
                 }
@@ -156,35 +158,7 @@ class Synth {
 //        self.avPlayNode.play()
 //    }
 //    
-//    //trying to see if synth can let oscillator handle wave generating duty
-//    func playSoundFromOsc(){
-//        let dummyInput: [Float] = [Float](count: bufferLength, repeatedValue: 0)
-//        var osc1 = Oscillator()
-//        osc1.inputWaveFormBuffer = dummyInput
-//        osc1.frequency = 261.6
-//        osc1.waveForm = BasicWaves.Sine
-//        var o1 = osc1.getOutput()
-//        var osc2 = Oscillator()
-//        osc2.inputWaveFormBuffer = o1
-//        osc2.frequency = 261.6*1.498 //5th
-//        osc2.waveForm = BasicWaves.Sine
-//        osc2.intensity = 0
-//        var o2 = osc2.getOutput()
-//        var osc3 = Oscillator()
-//        osc3.inputWaveFormBuffer = o2
-//        osc3.frequency = Float(NoteFrequency.getFrequency(11)) //maj7th
-//        osc3.waveForm = BasicWaves.Sine
-//        osc2.intensity = 0
-//        
-//        var out = osc3.getOutput()
-//        for(var i = 0; i<bufferLength; ++i){
-//            avBuffer.floatChannelData.memory[i] = out[i]
-//        }
-//        avPlayNode.scheduleBuffer(avBuffer, atTime: nil, options: AVAudioPlayerNodeBufferOptions.Loops, completionHandler: nil)
-//        self.avPlayNode.play()
-//    }
-//    
-//    
+
     //pause audio output
     func pausePlayer(){
         self.avPlayNode.pause()
