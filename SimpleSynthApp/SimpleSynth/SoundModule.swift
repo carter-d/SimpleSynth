@@ -8,7 +8,10 @@
 
 import Foundation
 class SoundModule {
+    var isTiedToKBInput: Bool = false
     func getOutput(inputValue: Float,index: Int)->Float{
         return 0.0
+    }
+    func updateInputParameter(input: Float){
     }
 }

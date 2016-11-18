@@ -43,9 +43,6 @@ class Synth {
         frequency = 261.6 // default to middle c
         sRate = 44100 // 44.1khz is a pretty standard sampling rate
         keyPressed = false
-        
-
-        
         avEngine.attachNode(avPlayNode)
         avEngine.connect(avPlayNode, to: avMix, format: audioFormat)
 
@@ -61,7 +58,15 @@ class Synth {
         var osc2 = Oscillator()
         osc2.frequency = NoteFrequency.getFrequency(frequency, stepsFromNote: 2)
         osc2.waveForm = BasicWaves.Square
-        mb.theBoard.append(osc1)
+        
+        var osc2sFC = Oscillator()
+        osc2sFC.waveForm = BasicWaves.Square
+        osc2sFC.frequency = 10
+        osc2sFC.intensity = 10
+       // osc2.frequencyController = osc2sFC
+        //osc1.intensityController = osc2sFC
+        osc1.isTiedToKBInput = true
+       mb.theBoard.append(osc1)
         mb.theBoard.append(osc2)
     }
     

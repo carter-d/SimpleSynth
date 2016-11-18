@@ -52,6 +52,13 @@ class Oscillator: SoundModule{
         
              return outputWaveValue
     }
+    override func updateInputParameter(input: Float){
+        if (isTiedToKBInput){
+            frequency = input
+        }
+    }
+
+
     private func squaref(x: Float)->Float{
         if (Double(x)%(M_PI*2) > M_PI){
             return 0.0
@@ -60,4 +67,15 @@ class Oscillator: SoundModule{
           return 1.0
         }
     }
+    private func sawtoothf(x: Float)->Float{
+        let result = (-2/(M_PI)) * atan( ( 1/tan( (Double(x)*M_PI)/(M_PI*2)   ) )   );
+        return Float(result);
+    }
+    
+    private func trianglef(x: Float)->Float{
+        let result = (2/(M_PI)) * asin( ( sin( (Double(x)*M_PI*2)/(M_PI*2)   ) )   );
+        return Float(result);
+        
+    }
+
 }
