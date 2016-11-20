@@ -4,7 +4,7 @@
 //
 //  Created by Ray on 11/16/16.
 //  Copyright © 2016 SimpleSynth. All rights reserved.
-//
+// This is a helper class to make calculating relative frequency to a base pitch a little easier.
 
 import Foundation
 import UIKit

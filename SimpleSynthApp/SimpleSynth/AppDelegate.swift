@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SimpleSynth
 //
-//  Created by Labuser on 11/11/16.
+//  Created by Carter Durno on 11/11/16.
 //  Copyright © 2016 SimpleSynth. All rights reserved.
 //
 

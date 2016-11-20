@@ -17,6 +17,7 @@ class Oscillator: SoundModule{
     var intensityController: SoundModule? //an oscialltor's intensity can be controlled by another oscillator
     var baseFrequency: Float?
     var baseIntensity: Float?
+    var stepsFromUserInput: Int = 0
 
     override func getOutput(inputValue: Float,index: Int)->Float{
         var outputWaveValue: Float = 0.0
@@ -45,8 +46,10 @@ class Oscillator: SoundModule{
                 outputWaveValue = inputValue + (squaref((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
             break
             case BasicWaves.Sawtooth:
+                outputWaveValue = inputValue + (sawtoothf((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
                 break
         case BasicWaves.Triangle:
+                outputWaveValue = inputValue + (trianglef((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
                 break
         }
         
@@ -54,7 +57,7 @@ class Oscillator: SoundModule{
     }
     override func updateInputParameter(input: Float){
         if (isTiedToKBInput){
-            frequency = input
+            frequency = NoteFrequency.getFrequency(input,stepsFromNote: stepsFromUserInput)
         }
     }
 
