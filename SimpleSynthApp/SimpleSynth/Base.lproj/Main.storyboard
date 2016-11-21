@@ -8,7 +8,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Setting View Controller-->
+        <!--Setting-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SettingViewController" customModule="SimpleSynth" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                             <constraint firstItem="Cv9-gB-03T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vVN-51-4vO"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="GqE-Xt-agy"/>
+                    <tabBarItem key="tabBarItem" title="Setting" id="GqE-Xt-agy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -349,7 +349,7 @@
             </objects>
             <point key="canvasLocation" x="542" y="-353"/>
         </scene>
-        <!--Item-->
+        <!--Feed View Controller-->
         <scene sceneID="ROb-t3-XyX">
             <objects>
                 <viewController id="Gy7-VW-bEN" customClass="FeedViewController" customModule="SimpleSynth" customModuleProvider="target" sceneMemberID="viewController">
@@ -428,7 +428,7 @@
                             <constraint firstItem="PNm-cc-c5J" firstAttribute="top" secondItem="75E-wR-Hmm" secondAttribute="bottom" id="rpN-6M-bbH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="FfX-12-Yzl"/>
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="FfX-12-Yzl"/>
                     <navigationItem key="navigationItem" id="kAH-5C-NOy"/>
                     <connections>
                         <outlet property="activityInd" destination="ulM-zb-S2p" id="oVS-TA-D26"/>
