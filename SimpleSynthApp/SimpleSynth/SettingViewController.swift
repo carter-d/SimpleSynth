@@ -64,6 +64,31 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func playDivineSound(sender: UIButton) {
+         var newMB = ModuleBoard()
+        var osc = Oscillator()
+        var osc2 = Oscillator()
+         var osc3 = Oscillator()
+        var osc4 = Oscillator()
+        osc.isTiedToKBInput = true
+        osc2.isTiedToKBInput = true
+        osc2.isTiedToKBInput = true
+        osc3.isTiedToKBInput = true
+        osc4.isTiedToKBInput = true
+        osc2.stepsFromUserInput = 4
+        osc3.stepsFromUserInput = 7
+        osc4.stepsFromUserInput = 11
+        osc2.intensity = 0.5
+        osc3.intensity = 0.7
+        osc4.intensity = 0.3
+        
+        newMB.theBoard.append(osc)
+          newMB.theBoard.append(osc2)
+          newMB.theBoard.append(osc3)
+          newMB.theBoard.append(osc4)
+        exampleSynth.mb = newMB
+        exampleSynth.playSoundFromModule()
+
+        
     }
     @IBAction func playComplexWave(sender: UIButton) {
         var newMB = ModuleBoard()
