@@ -67,6 +67,17 @@ class SettingViewController: UIViewController {
         var newMB = ModuleBoard()
         var osc = Oscillator()
         osc.isTiedToKBInput = true
+        var intOsc = Oscillator()
+        intOsc.waveForm = BasicWaves.Sine
+        intOsc.frequency = 10
+        osc.intensityController = intOsc
+        
+        var freqOsc = Oscillator()
+        freqOsc.waveForm = BasicWaves.Triangle
+        freqOsc.frequency = 0.5
+        freqOsc.intensity = 5
+        osc.frequencyController = freqOsc
+        
         osc.waveForm = BasicWaves.Sawtooth
         newMB.theBoard.append(osc)
         exampleSynth.mb = newMB

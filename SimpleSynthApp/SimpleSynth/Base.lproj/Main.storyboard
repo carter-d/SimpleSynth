@@ -20,8 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KJs-Yk-Q08">
-                                <rect key="frame" x="35" y="52" width="257" height="180"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="27.5" minValue="27.5" maxValue="4186" translatesAutoresizingMaskIntoConstraints="NO" id="Cv9-gB-03T">
+                                <rect key="frame" x="150" y="513" width="301" height="31"/>
+                                <connections>
+                                    <action selector="frequencyAdjust:" destination="BYZ-38-t0r" eventType="valueChanged" id="fXz-OM-zcI"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KJs-Yk-Q08">
+                                <rect key="frame" x="172" y="210" width="257" height="180"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-H2-baN">
                                         <rect key="frame" x="93" y="0.0" width="71" height="30"/>
@@ -44,7 +50,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-L2-H3L">
-                                        <rect key="frame" x="83" y="60" width="90" height="30"/>
+                                        <rect key="frame" x="84" y="60" width="90" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="U7X-jC-GfV"/>
                                         </constraints>
@@ -54,7 +60,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-aa-Gcx">
-                                        <rect key="frame" x="75" y="90" width="106" height="30"/>
+                                        <rect key="frame" x="76" y="90" width="106" height="30"/>
                                         <state key="normal" title="Sawtooth Wave"/>
                                         <connections>
                                             <action selector="playSawtoothWave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEv-uF-uSl"/>
@@ -79,18 +85,12 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="27.5" minValue="27.5" maxValue="4186" translatesAutoresizingMaskIntoConstraints="NO" id="Cv9-gB-03T">
-                                <rect key="frame" x="78" y="476" width="301" height="31"/>
-                                <connections>
-                                    <action selector="frequencyAdjust:" destination="BYZ-38-t0r" eventType="valueChanged" id="fXz-OM-zcI"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cv9-gB-03T" secondAttribute="bottom" constant="94" id="0Pf-YR-vqT"/>
-                            <constraint firstItem="Cv9-gB-03T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="Mwk-9z-hXF"/>
-                            <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dSg-cd-Wti"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cv9-gB-03T" secondAttribute="bottom" constant="8" id="0Pf-YR-vqT"/>
+                            <constraint firstItem="Cv9-gB-03T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="132" id="Mwk-9z-hXF"/>
+                            <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="dSg-cd-Wti"/>
                             <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eRw-qp-aP4"/>
                             <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qbW-lz-oEv"/>
                             <constraint firstItem="Cv9-gB-03T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vVN-51-4vO"/>
