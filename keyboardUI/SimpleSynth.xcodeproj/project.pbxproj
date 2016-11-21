@@ -17,6 +17,7 @@
 		686A6A131DDBBB9A00223EEF /* black.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 686A6A111DDBBB9A00223EEF /* black.jpg */; };
 		686A6A141DDBBB9A00223EEF /* white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 686A6A121DDBBB9A00223EEF /* white.jpg */; };
 		68F983021DE28B0E0001C7D6 /* PianoPoster.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 68F983011DE28B0E0001C7D6 /* PianoPoster.jpg */; };
+		710148781DE29E8B00C6AC9D /* KeyUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710148771DE29E8B00C6AC9D /* KeyUIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		686A6A111DDBBB9A00223EEF /* black.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = black.jpg; sourceTree = "<group>"; };
 		686A6A121DDBBB9A00223EEF /* white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = white.jpg; sourceTree = "<group>"; };
 		68F983011DE28B0E0001C7D6 /* PianoPoster.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = PianoPoster.jpg; sourceTree = "<group>"; };
+		710148771DE29E8B00C6AC9D /* KeyUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyUIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				686A69FE1DDBB72B00223EEF /* SettingsViewController.swift */,
 				686A6A0E1DDBB78A00223EEF /* FeedViewController.swift */,
 				686A6A001DDBB72B00223EEF /* Main.storyboard */,
+				710148771DE29E8B00C6AC9D /* KeyUIButton.swift */,
 				686A6A031DDBB72B00223EEF /* Assets.xcassets */,
 				686A6A051DDBB72B00223EEF /* LaunchScreen.storyboard */,
 				68F983011DE28B0E0001C7D6 /* PianoPoster.jpg */,
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				710148781DE29E8B00C6AC9D /* KeyUIButton.swift in Sources */,
 				686A69FF1DDBB72B00223EEF /* SettingsViewController.swift in Sources */,
 				686A69FB1DDBB72B00223EEF /* AppDelegate.swift in Sources */,
 				686A6A0F1DDBB78A00223EEF /* FeedViewController.swift in Sources */,

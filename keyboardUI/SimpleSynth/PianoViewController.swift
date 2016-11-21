@@ -11,10 +11,36 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
-
+class PianoViewController: UIViewController {
+    @IBOutlet weak var cButton: KeyUIButton!
+    @IBOutlet weak var cSharpButton: KeyUIButton!
+    @IBOutlet weak var dButton: KeyUIButton!
+    @IBOutlet weak var dSharpButton: KeyUIButton!
+    @IBOutlet weak var eButton: KeyUIButton!
+    @IBOutlet weak var fButton: KeyUIButton!
+    @IBOutlet weak var fSharpButton: KeyUIButton!
+    @IBOutlet weak var gButton: KeyUIButton!
+    @IBOutlet weak var gSharpButton: KeyUIButton!
+    @IBOutlet weak var aButton: KeyUIButton!
+    @IBOutlet weak var aSharpButton: KeyUIButton!
+    @IBOutlet weak var bButton: KeyUIButton!
+    @IBOutlet weak var highCButton: KeyUIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        cButton.stepsAwayFromC = 0
+        cSharpButton.stepsAwayFromC = 1
+        dButton.stepsAwayFromC = 2
+        dSharpButton.stepsAwayFromC = 3
+        eButton.stepsAwayFromC = 4
+        fButton.stepsAwayFromC = 5
+        fSharpButton.stepsAwayFromC = 6
+        gButton.stepsAwayFromC = 7
+        gSharpButton.stepsAwayFromC = 8
+        aButton.stepsAwayFromC = 9
+        aSharpButton.stepsAwayFromC = 10
+        bButton.stepsAwayFromC = 11
+        highCButton.stepsAwayFromC = 12
 //        
 //        IntroButton.center = CGPoint(x: view.frame.midX, y: view.frame.midY)
 //        pianoLabel.frame = IntroButton.bounds
@@ -37,6 +63,9 @@ class FirstViewController: UIViewController {
         return button
     }()
     
+    @IBAction func keyPressed(sender: KeyUIButton) {
+        print(sender.stepsAwayFromC)
+    }
     private let pianoLabel: UILabel = {
         let label = UILabel()
         label.text = "SimpleSynth"

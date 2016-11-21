@@ -10,7 +10,7 @@
         <!--Piano-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
-                <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="SimpleSynth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9pv-A4-QxB" customClass="PianoViewController" customModule="SimpleSynth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
                         <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
@@ -22,66 +22,90 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nP0-Np-xFm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-AG-XIu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Onl-AG-XIu" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="C" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="XCq-B7-VWf"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-lv-dTo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-lv-dTo" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="75" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="D" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="bSO-BU-ZRf"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isV-Vn-bnK">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isV-Vn-bnK" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="150" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="E" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="DbN-9S-JPA"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTR-g4-RI2">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTR-g4-RI2" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="225" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="F" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="yku-Ym-wAY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cek-Z8-mJO">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cek-Z8-mJO" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="300" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="G" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="N5O-Da-QcS"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-Jx-YXg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-Jx-YXg" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="375" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="A" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ksg-0e-RlY"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1m-YL-der">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1m-YL-der" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="450" y="0.0" width="75" height="551"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                         <state key="normal" title="B" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="64N-xJ-MgM"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e63-DK-45r">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e63-DK-45r" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                         <rect key="frame" x="525" y="0.0" width="75" height="551"/>
                                         <state key="normal" title="C" backgroundImage="white.jpg">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Fkt-PB-ols"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSq-eG-Fsg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSq-eG-Fsg" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                 <rect key="frame" x="50" y="0.0" width="50" height="140"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
@@ -101,8 +125,11 @@
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="ytf-A1-JKH"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dx-MR-z0i">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Dx-MR-z0i" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                 <rect key="frame" x="125" y="0.0" width="50" height="140"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
@@ -111,8 +138,11 @@
                                     <color key="titleColor" red="1" green="0.96624197730000005" blue="0.94971695540000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Ze8-cH-Cvo"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-uA-Nhn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBq-uA-Nhn" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                 <rect key="frame" x="275" y="0.0" width="50" height="140"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
@@ -121,8 +151,11 @@
                                     <color key="titleColor" red="1" green="0.96624197730000005" blue="0.94971695540000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="rzL-tE-EMI"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-kb-4b4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s7o-kb-4b4" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                 <rect key="frame" x="350" y="0.0" width="50" height="140"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
@@ -131,8 +164,11 @@
                                     <color key="titleColor" red="1" green="0.96624197730000005" blue="0.94971695540000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eEW-ky-4Or"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-6m-iqk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqr-6m-iqk" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
                                 <rect key="frame" x="425" y="0.0" width="50" height="140"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
@@ -141,6 +177,9 @@
                                     <color key="titleColor" red="1" green="0.96624197730000005" blue="0.94971695540000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="keyPressed:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KpA-xj-AaV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -169,6 +208,21 @@
                     <tabBarItem key="tabBarItem" title="Piano" id="acW-dT-cKf">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-13"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="aButton" destination="ecC-Jx-YXg" id="ai5-pG-YBz"/>
+                        <outlet property="aSharpButton" destination="xqr-6m-iqk" id="lUj-mX-7dM"/>
+                        <outlet property="bButton" destination="p1m-YL-der" id="q5T-eS-25z"/>
+                        <outlet property="cButton" destination="Onl-AG-XIu" id="zHG-wq-4ts"/>
+                        <outlet property="cSharpButton" destination="uSq-eG-Fsg" id="gF1-so-6EB"/>
+                        <outlet property="dButton" destination="dUu-lv-dTo" id="ogE-o4-UcU"/>
+                        <outlet property="dSharpButton" destination="3Dx-MR-z0i" id="JkV-zb-FzB"/>
+                        <outlet property="eButton" destination="isV-Vn-bnK" id="aUy-UH-vFK"/>
+                        <outlet property="fButton" destination="bTR-g4-RI2" id="z5c-m7-lhI"/>
+                        <outlet property="fSharpButton" destination="NBq-uA-Nhn" id="gSm-PF-2hy"/>
+                        <outlet property="gButton" destination="cek-Z8-mJO" id="8mD-74-wvZ"/>
+                        <outlet property="gSharpButton" destination="s7o-kb-4b4" id="yKu-hR-WYg"/>
+                        <outlet property="highCButton" destination="e63-DK-45r" id="B63-xt-mA0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
