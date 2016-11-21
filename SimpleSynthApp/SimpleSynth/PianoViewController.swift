@@ -64,7 +64,8 @@ class PianoViewController: UIViewController {
     }()
     
     @IBAction func keyPressed(sender: KeyUIButton) {
-        print(sender.stepsAwayFromC)
+      //  print(sender.stepsAwayFromC)
+        exampleSynth.frequency = NoteFrequency.getFrequency(sender.stepsAwayFromC)
     }
     private let pianoLabel: UILabel = {
         let label = UILabel()
