@@ -20,7 +20,7 @@ class FeedCellView: UICollectionViewCell {
         }
     }
     func updateUI(){
-        Poster.image = UIImage(named: "play")
+        Poster.image = UIImage(named: "Play")
         Title.text = "Test Synth"
     }
  
