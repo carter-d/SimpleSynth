@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="SimpleSynth" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-re-ydJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="123"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="123" id="knn-xT-cJW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="72"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PianoPoster.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mms-b8-erW">
+                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IC5-re-ydJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="B47-1H-eqe"/>
+                            <constraint firstItem="IC5-re-ydJ" firstAttribute="trailing" secondItem="mms-b8-erW" secondAttribute="trailing" id="NVq-LQ-Q2a"/>
+                            <constraint firstAttribute="trailing" secondItem="IC5-re-ydJ" secondAttribute="trailing" id="OaB-kE-oyp"/>
+                            <constraint firstItem="IC5-re-ydJ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="WHA-VM-BtC"/>
+                            <constraint firstItem="IC5-re-ydJ" firstAttribute="leading" secondItem="mms-b8-erW" secondAttribute="leading" id="kOv-xv-9rh"/>
+                            <constraint firstItem="mms-b8-erW" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="pmD-fN-AYL"/>
+                            <constraint firstItem="mms-b8-erW" firstAttribute="top" secondItem="IC5-re-ydJ" secondAttribute="bottom" constant="1" id="yvi-vx-nto"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="281"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PianoPoster.jpg" width="1667" height="1667"/>
+    </resources>
+</document>
