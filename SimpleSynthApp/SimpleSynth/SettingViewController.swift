@@ -63,6 +63,8 @@ class SettingViewController: UIViewController {
         exampleSynth.playSoundFromModule()
     }
     
+    @IBAction func playDivineSound(sender: UIButton) {
+    }
     @IBAction func playComplexWave(sender: UIButton) {
         var newMB = ModuleBoard()
         var osc = Oscillator()
