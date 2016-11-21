@@ -76,6 +76,7 @@ class ViewController: UIViewController {
     
     @IBAction func frequencyAdjust(sender: UISlider) {
         exampleSynth.frequency = sender.value
+
     }
     
     
