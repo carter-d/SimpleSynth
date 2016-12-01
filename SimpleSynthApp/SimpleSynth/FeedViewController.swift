@@ -18,9 +18,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
     var synths = [ModuleBoard]();
     var index = -1
-    var exampleSynth = Synth() 
+   // var exampleSynth = Synth()
     
     override func viewDidLoad() {
+        var lastSynth = exampleSynth
+      
       
         activityInd.hidesWhenStopped = true
         self.feedCollectionView.dataSource = self
@@ -97,8 +99,25 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.backgroundColor = UIColor.whiteColor()
         return cell
     }
-    
-
-
-
+    //this method returns a synth object for you to try
+    func setSynthObject()-> Synth{
+        var newMB = ModuleBoard()
+        var osc = Oscillator()
+        osc.isTiedToKBInput = true
+        var intOsc = Oscillator()
+        intOsc.waveForm = BasicWaves.Sine
+        intOsc.frequency = 10
+        osc.intensityController = intOsc
+        
+        var freqOsc = Oscillator()
+        freqOsc.waveForm = BasicWaves.Triangle
+        freqOsc.frequency = 0.5
+        freqOsc.intensity = 5
+        osc.frequencyController = freqOsc
+        
+        osc.waveForm = BasicWaves.Sawtooth
+        newMB.theBoard.append(osc)
+        exampleSynth.mb = newMB
+        return exampleSynth
+    }
 }
