@@ -15,23 +15,21 @@ class EnvGenerator: SoundModule{
     var sustain: Int = 2000
     var sustainLevel: Float = 0.5
     var release: Int = 2000
-    var indexOfLastTrigger: Int = -1000000
     
     override func getOutput(inputValue: Float,index: Int)->Float{
         var output: Float = inputValue
-        let indexSinceLastTrigger = index - indexOfLastTrigger
-        if (indexSinceLastTrigger < attack*Int(samplingRate)/1000){
-          output = output*Float(indexSinceLastTrigger / (attack*Int(samplingRate)/1000))
+        if (index < attack*Int(samplingRate)/1000){
+          output = output*Float(index / (attack*Int(samplingRate)/1000))
            
         }
-        else if (indexSinceLastTrigger < (attack+decay)*Int(samplingRate)/1000){
+        else if (index < (attack+decay)*Int(samplingRate)/1000){
             //let Float(indexSinceLastTrigger - attack*Int(samplingRate)/1000)
             //output = output*Float((Float(indexSinceLastTrigger - attack*Int(samplingRate)/1000))/(decay*Int(samplingRate)/1000))
         }
-        else if (indexSinceLastTrigger < (attack+decay+sustain)*Int(samplingRate)/1000){
+        else if (index < (attack+decay+sustain)*Int(samplingRate)/1000){
             
         }
-        else if (indexSinceLastTrigger < (attack+decay+sustain+release)*Int(samplingRate)/1000){
+        else if (index < (attack+decay+sustain+release)*Int(samplingRate)/1000){
             
         }
         else {
@@ -41,7 +39,7 @@ class EnvGenerator: SoundModule{
        return output
     }
     
-    override func updateInputParameter(input: Float){
-        indexOfLastTrigger = Int(input)
-    }
+//    override func updateInputParameter(input: Float){
+//        indexOfLastTrigger = Int(input)
+//    }
 }

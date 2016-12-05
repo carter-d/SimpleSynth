@@ -39,6 +39,8 @@ class SettingViewController: UIViewController {
         }
         
         super.viewDidLoad()
+        mb.theBoard.append(baseOsc)
+        exampleSynth.mb = self.mb
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -88,7 +90,7 @@ class SettingViewController: UIViewController {
         var osc = Oscillator()
         osc.isTiedToKBInput = true
         osc.waveForm = BasicWaves.Sawtooth
-        newMB.theBoard.append(osc)
+       // newMB.theBoard.append(osc)
         exampleSynth.mb = newMB
         exampleSynth.playSoundFromModule()
     }
@@ -111,8 +113,8 @@ class SettingViewController: UIViewController {
             
             baseOsc.isTiedToKBInput = true
             baseOsc.waveForm = BasicWaves.Sine
-            mb.theBoard.append(baseOsc)
-            exampleSynth.mb = mb
+     //       mb.theBoard.append(baseOsc)
+            //exampleSynth.mb = mb
             exampleSynth.playSoundFromModule()
             
             
@@ -123,9 +125,9 @@ class SettingViewController: UIViewController {
             
             baseOsc.isTiedToKBInput = true
             baseOsc.waveForm = BasicWaves.Triangle
-            mb.theBoard.append(baseOsc)
-            exampleSynth.mb = mb
-            exampleSynth.playSoundFromModule()
+        //    mb.theBoard.append(baseOsc)
+         //  exampleSynth.mb = mb
+           exampleSynth.playSoundFromModule()
             
         case .Square:
             baseButtons[2].backgroundColor = aestheticOrange
@@ -133,8 +135,8 @@ class SettingViewController: UIViewController {
             
             baseOsc.isTiedToKBInput = true
             baseOsc.waveForm = BasicWaves.Square
-            mb.theBoard.append(baseOsc)
-            exampleSynth.mb = mb
+       //     mb.theBoard.append(baseOsc)
+        //    exampleSynth.mb = mb
             exampleSynth.playSoundFromModule()
             
         case .Sawtooth:
@@ -143,10 +145,10 @@ class SettingViewController: UIViewController {
             
             baseOsc.isTiedToKBInput = true
             baseOsc.waveForm = BasicWaves.Sawtooth
-            mb.theBoard.append(baseOsc)
-            exampleSynth.mb = mb
+       //     mb.theBoard.append(baseOsc)
+        //    exampleSynth.mb = mb
             exampleSynth.playSoundFromModule()
-            
+            print(exampleSynth.mb.theBoard.count)
         case .None:
             print("none")
         }
@@ -258,7 +260,7 @@ class SettingViewController: UIViewController {
         }
     
     }
-    
+
 
 //    @IBAction func annoyingNoise(sender: AnyObject) {
 //        exampleSynth.keyPressed = true
