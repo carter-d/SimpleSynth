@@ -21,15 +21,17 @@ class EnvGenerator: SoundModule{
         var output: Float = inputValue
         let indexSinceLastTrigger = index - indexOfLastTrigger
         if (indexSinceLastTrigger < attack*Int(samplingRate)/1000){
-            output = Float(indexSinceLastTrigger / (attack*Int(samplingRate)/1000))
+          output = output*Float(indexSinceLastTrigger / (attack*Int(samplingRate)/1000))
+           
         }
-        else if (indexSinceLastTrigger < decay*Int(samplingRate)/1000){
+        else if (indexSinceLastTrigger < (attack+decay)*Int(samplingRate)/1000){
+            //let Float(indexSinceLastTrigger - attack*Int(samplingRate)/1000)
+            //output = output*Float((Float(indexSinceLastTrigger - attack*Int(samplingRate)/1000))/(decay*Int(samplingRate)/1000))
+        }
+        else if (indexSinceLastTrigger < (attack+decay+sustain)*Int(samplingRate)/1000){
             
         }
-        else if (indexSinceLastTrigger < sustain*Int(samplingRate)/1000){
-            
-        }
-        else if (indexSinceLastTrigger < release*Int(samplingRate)/1000){
+        else if (indexSinceLastTrigger < (attack+decay+sustain+release)*Int(samplingRate)/1000){
             
         }
         else {

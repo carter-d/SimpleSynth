@@ -50,7 +50,7 @@ class ModuleBoard {
                     }
                     
                 }
-                if m is EnvGenerator{
+                else if m is EnvGenerator{
                     m.updateInputParameter(Float(indexOfLastKeyPress))
                     print(indexOfLastKeyPress)
                 }

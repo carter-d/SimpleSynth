@@ -50,6 +50,10 @@ class SettingViewController: UIViewController {
         osc.isTiedToKBInput = true
         osc.waveForm = BasicWaves.Square
         newMB.theBoard.append(osc)
+        var eg = EnvGenerator()
+        eg.attack = 0
+        eg.decay = 5000
+        newMB.theBoard.append(eg)
         exampleSynth.mb = newMB
         exampleSynth.playSoundFromModule()
     }
