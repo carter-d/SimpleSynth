@@ -9,6 +9,7 @@
 import Foundation
 class SoundModule {
     var isTiedToKBInput: Bool = false
+    var samplingRate: Float = 44100
     func getOutput(inputValue: Float,index: Int)->Float{
         return 0.0
     }

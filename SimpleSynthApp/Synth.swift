@@ -23,6 +23,7 @@ class Synth {
     var frequency: Float
     var sRate: Float
     var keyPressed: Bool
+    var totalSampleIndex: Int = 0
     var mb: ModuleBoard = ModuleBoard()
     let bufferLength: Int = 1024
     private let numberOfBuffers:Int = 2
@@ -78,11 +79,11 @@ class Synth {
         //mb.theBoard.append(osc2)
     }
     
-    
+
 
     func playSoundFromModule(){
         dispatch_async(queue){
-        var totalSampleIndex:Float = 0
+      //  var totalSampleIndex:Float = 0
         var currentBufferIndex = 0
         while true {
             let currentBuffer = self.buffers[currentBufferIndex]
@@ -91,10 +92,10 @@ class Synth {
             dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
             for sampleIndex in 0...self.bufferLength-1{
                 self.mb.inputFrequency = self.frequency
-                let sampleValue = self.mb.getOverallSound(Int(totalSampleIndex))
+                let sampleValue = self.mb.getOverallSound(Int(self.totalSampleIndex))
                 leftChannelData[sampleIndex] = sampleValue
                 rightChannelData[sampleIndex] = sampleValue
-                totalSampleIndex = totalSampleIndex + 1
+                self.totalSampleIndex = self.totalSampleIndex + 1
             }
             currentBuffer.frameLength = UInt32(self.bufferLength)
             self.avPlayNode.scheduleBuffer(currentBuffer) {
@@ -128,7 +129,7 @@ class Synth {
     }
     func playSin(){
         dispatch_async(queue){
-            var totalSampleIndex:Float = 0
+           // var totalSampleIndex:Float = 0
             var currentBufferIndex = 0
             while true {
                 var currentBuffer = self.buffers[currentBufferIndex]
@@ -136,10 +137,10 @@ class Synth {
                 var rightChannelData = currentBuffer.floatChannelData[1]
                 dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
                 for sampleIndex in 0...self.bufferLength-1{
-                    let sampleValue = sinf((Float(totalSampleIndex)*Float(M_PI*2)*self.frequency)/self.sRate) //create a sine wave to fill the buffer
+                    let sampleValue = sinf((Float(self.totalSampleIndex)*Float(M_PI*2)*self.frequency)/self.sRate) //create a sine wave to fill the buffer
                     leftChannelData[sampleIndex] = sampleValue
                     rightChannelData[sampleIndex] = sampleValue
-                    totalSampleIndex = totalSampleIndex + 1
+                    self.totalSampleIndex = self.totalSampleIndex + 1
                 }
                 currentBuffer.frameLength = UInt32(self.bufferLength)
                 self.avPlayNode.scheduleBuffer(currentBuffer) {
