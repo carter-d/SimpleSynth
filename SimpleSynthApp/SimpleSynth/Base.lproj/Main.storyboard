@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -20,96 +21,364 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="27.5" minValue="27.5" maxValue="4186" translatesAutoresizingMaskIntoConstraints="NO" id="Cv9-gB-03T">
-                                <rect key="frame" x="150" y="513" width="301" height="31"/>
-                                <connections>
-                                    <action selector="frequencyAdjust:" destination="BYZ-38-t0r" eventType="valueChanged" id="fXz-OM-zcI"/>
-                                </connections>
-                            </slider>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KJs-Yk-Q08">
-                                <rect key="frame" x="172" y="210" width="257" height="210"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="6MA-Z1-Xem">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPd-H2-baN">
-                                        <rect key="frame" x="93" y="0.0" width="71" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="isu-c5-EsG"/>
-                                        </constraints>
-                                        <state key="normal" title="Sine Wave"/>
-                                        <connections>
-                                            <action selector="playSine:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KZK-6f-VvB"/>
-                                        </connections>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6N-Ha-wXI">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sine">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" title="sine">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unp-Ib-MkO">
-                                        <rect key="frame" x="80" y="30" width="97" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="qBf-iX-oT0"/>
-                                        </constraints>
-                                        <state key="normal" title="Triangle Wave"/>
-                                        <connections>
-                                            <action selector="playTriangle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1fl-qU-27o"/>
-                                        </connections>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPj-e3-8ao">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="triangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1k-L2-H3L">
-                                        <rect key="frame" x="84" y="60" width="90" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="U7X-jC-GfV"/>
-                                        </constraints>
-                                        <state key="normal" title="Square Wave"/>
-                                        <connections>
-                                            <action selector="playSquare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HHG-44-wXe"/>
-                                        </connections>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkj-fE-5OT">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="square">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktF-aa-Gcx">
-                                        <rect key="frame" x="76" y="90" width="106" height="30"/>
-                                        <state key="normal" title="Sawtooth Wave"/>
-                                        <connections>
-                                            <action selector="playSawtoothWave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QEv-uF-uSl"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pdU-F1-Dwh">
-                                        <rect key="frame" x="83" y="120" width="91" height="30"/>
-                                        <state key="normal" title="Divine Sound"/>
-                                        <connections>
-                                            <action selector="playDivineSound:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q4T-f7-fY1"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohd-JL-etv">
-                                        <rect key="frame" x="0.0" y="150" width="257" height="30"/>
-                                        <state key="normal" title="Square Wave (Freq:Triangle, Vol:Sine)"/>
-                                        <connections>
-                                            <action selector="playComplexWave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OJP-hM-Qic"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-BM-zU3">
-                                        <rect key="frame" x="64" y="180" width="129" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="129" id="cdJ-ao-hyW"/>
-                                        </constraints>
-                                        <state key="normal" title="stop noise"/>
-                                        <connections>
-                                            <action selector="stopNoise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jWy-tu-PyS"/>
-                                        </connections>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSD-yt-UEb">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sawtooth">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="59l-g1-Ank">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx9-5D-rbg">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sine">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Te-5U-GSE">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="triangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dhd-R9-an7">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="square">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sja-WO-mwt">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sawtooth">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpL-ws-ToZ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="none">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Jfn-Ls-E86">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKv-hr-SYg">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sine">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvp-8k-n9q">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="triangle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCD-ih-Cjb">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="square">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88z-MP-Bvh">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="sawtooth">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cp-F8-g88">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                        <state key="normal" title="none">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FREQUENCY:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr6-hf-Tt1">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="Ykn-Yn-2cR">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="202"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Ykn-Yn-2cR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="230" y="33" width="202" height="40"/>
+                                    <mask key="constraints">
+                                        <include reference="Ykn-Yn-2cR"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INTENSITY:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blK-P6-cKv">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="zTJ-Mk-fnb">
+                                        <variation key="heightClass=compact-widthClass=regular" constant="202"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="zTJ-Mk-fnb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="440" y="33" width="202" height="40"/>
+                                    <mask key="constraints">
+                                        <include reference="zTJ-Mk-fnb"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DYs-Ng-NlE">
+                                <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    ATTACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NnL-n2-YRn">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="eMx-f3-oY1">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    DECAY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6o-CA-SRZ">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4kB-ap-ReZ">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    SUSTAIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ej-ou-TaC">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oE1-oh-vkb">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    RELEASE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZC-aB-HNd">
+                                        <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zMV-fN-LJF">
+                                        <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.14901960780000001" green="0.1960784314" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </slider>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BASE:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY6-bl-oHq">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Cv9-gB-03T" secondAttribute="bottom" constant="8" id="0Pf-YR-vqT"/>
-                            <constraint firstItem="Cv9-gB-03T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="132" id="Mwk-9z-hXF"/>
-                            <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="dSg-cd-Wti"/>
-                            <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eRw-qp-aP4"/>
-                            <constraint firstItem="KJs-Yk-Q08" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qbW-lz-oEv"/>
-                            <constraint firstItem="Cv9-gB-03T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vVN-51-4vO"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="bottom" secondItem="Jfn-Ls-E86" secondAttribute="bottom" id="0bc-qT-9f0"/>
+                            <constraint firstItem="kY6-bl-oHq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1D4-Wq-0Mw"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="46" id="7zE-vf-7TY"/>
+                            <constraint firstItem="kY6-bl-oHq" firstAttribute="baseline" secondItem="dr6-hf-Tt1" secondAttribute="firstBaseline" id="8js-YW-5Z5"/>
+                            <constraint firstItem="59l-g1-Ank" firstAttribute="leading" secondItem="6MA-Z1-Xem" secondAttribute="trailing" constant="8" symbolic="YES" id="ESy-9t-f6l"/>
+                            <constraint firstItem="DYs-Ng-NlE" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EbN-0Q-rBm"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="bottom" secondItem="59l-g1-Ank" secondAttribute="bottom" id="HQW-iD-Yxg"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="top" secondItem="kY6-bl-oHq" secondAttribute="bottom" constant="12" id="KFZ-Da-55A"/>
+                            <constraint firstItem="DYs-Ng-NlE" firstAttribute="top" secondItem="Jfn-Ls-E86" secondAttribute="top" id="KJK-Zp-hJH"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="top" secondItem="Jfn-Ls-E86" secondAttribute="top" id="LEH-xR-cia"/>
+                            <constraint firstItem="dr6-hf-Tt1" firstAttribute="leading" secondItem="59l-g1-Ank" secondAttribute="leading" id="PMI-Nc-FzY"/>
+                            <constraint firstItem="kY6-bl-oHq" firstAttribute="leading" secondItem="6MA-Z1-Xem" secondAttribute="leading" id="PP3-1M-R9k"/>
+                            <constraint firstItem="dr6-hf-Tt1" firstAttribute="leading" secondItem="kY6-bl-oHq" secondAttribute="trailing" constant="8" symbolic="YES" id="PTO-iv-y7S"/>
+                            <constraint firstItem="blK-P6-cKv" firstAttribute="leading" secondItem="Jfn-Ls-E86" secondAttribute="leading" id="Q2E-jF-xV2"/>
+                            <constraint firstItem="DYs-Ng-NlE" firstAttribute="leading" secondItem="Jfn-Ls-E86" secondAttribute="trailing" constant="28" id="QVo-wK-Tu5"/>
+                            <constraint firstItem="6MA-Z1-Xem" firstAttribute="top" secondItem="59l-g1-Ank" secondAttribute="top" id="QY7-d1-kR7"/>
+                            <constraint firstAttribute="trailing" secondItem="59l-g1-Ank" secondAttribute="trailing" constant="368" id="QvQ-aM-9Dp"/>
+                            <constraint firstItem="kY6-bl-oHq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="14" id="dc8-Fu-Kw3"/>
+                            <constraint firstItem="dr6-hf-Tt1" firstAttribute="firstBaseline" secondItem="blK-P6-cKv" secondAttribute="firstBaseline" id="hR7-7z-mQJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Jfn-Ls-E86" secondAttribute="trailing" constant="158" id="iMT-Om-LT7"/>
+                            <constraint firstItem="dr6-hf-Tt1" firstAttribute="baseline" secondItem="blK-P6-cKv" secondAttribute="baseline" id="imx-Rn-DlW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6MA-Z1-Xem" secondAttribute="bottom" constant="8" symbolic="YES" id="nZl-Eb-Uip"/>
+                            <constraint firstAttribute="trailing" secondItem="6MA-Z1-Xem" secondAttribute="trailing" constant="578" id="oTM-Eq-rON"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DYs-Ng-NlE" secondAttribute="bottom" constant="8" symbolic="YES" id="wug-q9-bs4"/>
+                            <constraint firstItem="Jfn-Ls-E86" firstAttribute="leading" secondItem="59l-g1-Ank" secondAttribute="trailing" constant="8" symbolic="YES" id="zdY-4s-nc0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="6MA-Z1-Xem"/>
+                                <exclude reference="59l-g1-Ank"/>
+                                <exclude reference="Jfn-Ls-E86"/>
+                                <exclude reference="dr6-hf-Tt1"/>
+                                <exclude reference="blK-P6-cKv"/>
+                                <exclude reference="DYs-Ng-NlE"/>
+                                <exclude reference="kY6-bl-oHq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1D4-Wq-0Mw"/>
+                                <exclude reference="8js-YW-5Z5"/>
+                                <exclude reference="PP3-1M-R9k"/>
+                                <exclude reference="dc8-Fu-Kw3"/>
+                                <exclude reference="0bc-qT-9f0"/>
+                                <exclude reference="7zE-vf-7TY"/>
+                                <exclude reference="HQW-iD-Yxg"/>
+                                <exclude reference="KFZ-Da-55A"/>
+                                <exclude reference="LEH-xR-cia"/>
+                                <exclude reference="QY7-d1-kR7"/>
+                                <exclude reference="oTM-Eq-rON"/>
+                                <exclude reference="PMI-Nc-FzY"/>
+                                <exclude reference="PTO-iv-y7S"/>
+                                <exclude reference="hR7-7z-mQJ"/>
+                                <exclude reference="imx-Rn-DlW"/>
+                                <exclude reference="ESy-9t-f6l"/>
+                                <exclude reference="QvQ-aM-9Dp"/>
+                                <exclude reference="nZl-Eb-Uip"/>
+                                <exclude reference="wug-q9-bs4"/>
+                                <exclude reference="Q2E-jF-xV2"/>
+                                <exclude reference="iMT-Om-LT7"/>
+                                <exclude reference="zdY-4s-nc0"/>
+                                <exclude reference="EbN-0Q-rBm"/>
+                                <exclude reference="KJK-Zp-hJH"/>
+                                <exclude reference="QVo-wK-Tu5"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="6MA-Z1-Xem"/>
+                                <include reference="59l-g1-Ank"/>
+                                <include reference="Jfn-Ls-E86"/>
+                                <include reference="dr6-hf-Tt1"/>
+                                <include reference="blK-P6-cKv"/>
+                                <include reference="DYs-Ng-NlE"/>
+                                <include reference="kY6-bl-oHq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1D4-Wq-0Mw"/>
+                                <include reference="8js-YW-5Z5"/>
+                                <include reference="PP3-1M-R9k"/>
+                                <include reference="dc8-Fu-Kw3"/>
+                                <include reference="0bc-qT-9f0"/>
+                                <include reference="7zE-vf-7TY"/>
+                                <include reference="HQW-iD-Yxg"/>
+                                <include reference="KFZ-Da-55A"/>
+                                <include reference="LEH-xR-cia"/>
+                                <include reference="QY7-d1-kR7"/>
+                                <include reference="oTM-Eq-rON"/>
+                                <include reference="PMI-Nc-FzY"/>
+                                <include reference="PTO-iv-y7S"/>
+                                <include reference="hR7-7z-mQJ"/>
+                                <include reference="imx-Rn-DlW"/>
+                                <include reference="ESy-9t-f6l"/>
+                                <include reference="QvQ-aM-9Dp"/>
+                                <include reference="nZl-Eb-Uip"/>
+                                <include reference="wug-q9-bs4"/>
+                                <include reference="Q2E-jF-xV2"/>
+                                <include reference="iMT-Om-LT7"/>
+                                <include reference="zdY-4s-nc0"/>
+                                <include reference="EbN-0Q-rBm"/>
+                                <include reference="KJK-Zp-hJH"/>
+                                <include reference="QVo-wK-Tu5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Synth Setting" image="Vertical Settings Mixer-50" id="GqE-Xt-agy">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <connections>
+                        <outletCollection property="baseButtons" destination="k6N-Ha-wXI" collectionClass="NSMutableArray" id="yI4-rS-ZGD"/>
+                        <outletCollection property="baseButtons" destination="SPj-e3-8ao" collectionClass="NSMutableArray" id="AQ3-7x-HMS"/>
+                        <outletCollection property="baseButtons" destination="bkj-fE-5OT" collectionClass="NSMutableArray" id="v5F-u7-fav"/>
+                        <outletCollection property="baseButtons" destination="cSD-yt-UEb" collectionClass="NSMutableArray" id="0p8-Pq-UMg"/>
+                        <outletCollection property="freqButtons" destination="Kx9-5D-rbg" collectionClass="NSMutableArray" id="z73-Dv-AVs"/>
+                        <outletCollection property="freqButtons" destination="9Te-5U-GSE" collectionClass="NSMutableArray" id="kx3-nT-PxX"/>
+                        <outletCollection property="freqButtons" destination="Dhd-R9-an7" collectionClass="NSMutableArray" id="3aN-5a-Hvz"/>
+                        <outletCollection property="freqButtons" destination="sja-WO-mwt" collectionClass="NSMutableArray" id="0Ic-DS-fek"/>
+                        <outletCollection property="freqButtons" destination="zpL-ws-ToZ" collectionClass="NSMutableArray" id="8XK-j1-w98"/>
+                        <outletCollection property="intensityButtons" destination="gKv-hr-SYg" collectionClass="NSMutableArray" id="I70-f2-aZc"/>
+                        <outletCollection property="intensityButtons" destination="gvp-8k-n9q" collectionClass="NSMutableArray" id="LtA-bI-UMn"/>
+                        <outletCollection property="intensityButtons" destination="fCD-ih-Cjb" collectionClass="NSMutableArray" id="6DV-WX-dmD"/>
+                        <outletCollection property="intensityButtons" destination="88z-MP-Bvh" collectionClass="NSMutableArray" id="VQS-4e-zAa"/>
+                        <outletCollection property="intensityButtons" destination="0Cp-F8-g88" collectionClass="NSMutableArray" id="t05-cw-gHx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="542" y="314"/>
+            <point key="canvasLocation" x="541.5" y="313.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Cxn-c7-zsp">

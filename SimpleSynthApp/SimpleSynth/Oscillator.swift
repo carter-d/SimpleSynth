@@ -40,7 +40,6 @@ class Oscillator: SoundModule{
         switch waveForm! {
             case BasicWaves.Sine:
                 outputWaveValue = inputValue + (sinf((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
-               // print(freq)
             break
             case BasicWaves.Square:
                 outputWaveValue = inputValue + (squaref((Float(index)*Float(M_PI*2)*freq)/samplingRate)*ints)
