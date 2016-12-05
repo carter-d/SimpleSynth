@@ -22,10 +22,10 @@ class Synth {
     var avMix: AVAudioMixerNode
     var frequency: Float
     var sRate: Float
-    var keyPressed: Bool
-    var totalSampleIndex: Int = 0
+      var totalSampleIndex: Int = 0
     var mb: ModuleBoard = ModuleBoard()
     let bufferLength: Int = 1024
+    var keyHeld: Bool = false
     private let numberOfBuffers:Int = 2
     private var buffers =  [AVAudioPCMBuffer]()
     let audioFormat = AVAudioFormat(standardFormatWithSampleRate: 44100.0, channels: 2);
@@ -44,7 +44,7 @@ class Synth {
         avMix = avEngine.mainMixerNode
         frequency = 261.6 // default to middle c
         sRate = 44100 // 44.1khz is a pretty standard sampling rate
-        keyPressed = false
+   //     keyPressed = false
         avEngine.attachNode(avPlayNode)
         avEngine.connect(avPlayNode, to: avMix, format: audioFormat)
 
@@ -92,6 +92,7 @@ class Synth {
             dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER)
             for sampleIndex in 0...self.bufferLength-1{
                 self.mb.inputFrequency = self.frequency
+                self.mb.keyCurrentlyHeld = self.keyHeld
                 let sampleValue = self.mb.getOverallSound(Int(self.totalSampleIndex))
                 leftChannelData[sampleIndex] = sampleValue
                 rightChannelData[sampleIndex] = sampleValue

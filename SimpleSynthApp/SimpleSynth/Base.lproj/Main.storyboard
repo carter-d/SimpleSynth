@@ -422,6 +422,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="ZSp-UJ-pP7"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="8Si-jm-Zpf"/>
                                         </connections>
                                     </button>
@@ -432,6 +433,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="KmF-0t-FzJ"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="rb6-CW-qMB"/>
                                         </connections>
                                     </button>
@@ -442,6 +444,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="lSG-CU-geE"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="a1N-xo-TWj"/>
                                         </connections>
                                     </button>
@@ -452,6 +455,8 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="8fX-f0-ZZH"/>
+                                            <action selector="keyPressBegan:" destination="luj-N5-iZn" eventType="editingDidBegin" id="lBP-XG-ood"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="gLs-YN-H3e"/>
                                         </connections>
                                     </button>
@@ -462,6 +467,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="LJe-x0-QR0"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="tnT-mV-WV9"/>
                                         </connections>
                                     </button>
@@ -472,6 +478,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="OvJ-MJ-DcD"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="Fce-Z0-b58"/>
                                         </connections>
                                     </button>
@@ -483,6 +490,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="dsw-Lq-Set"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="wFf-6a-chD"/>
                                         </connections>
                                     </button>
@@ -493,6 +501,7 @@
                                             <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="YhB-xq-pzB"/>
                                             <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="22O-QK-Buz"/>
                                         </connections>
                                     </button>
@@ -519,6 +528,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="RHm-SM-2SI"/>
                                     <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="k2D-6C-ENN"/>
                                 </connections>
                             </button>
@@ -532,7 +542,8 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="iF3-d0-BAO"/>
+                                    <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="R8r-Yq-Mja"/>
+                                    <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="h7O-nn-EIk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B64-Gv-LwZ" customClass="KeyUIButton" customModule="SimpleSynth" customModuleProvider="target">
@@ -545,6 +556,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="x5y-zF-wMU"/>
                                     <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="zjq-Kg-Bno"/>
                                 </connections>
                             </button>
@@ -558,6 +570,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="MSe-Gm-e2d"/>
                                     <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="EaU-qC-LJb"/>
                                 </connections>
                             </button>
@@ -571,6 +584,7 @@
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="keyDown:" destination="luj-N5-iZn" eventType="touchDown" id="eyY-T4-87g"/>
                                     <action selector="keyPressed:" destination="luj-N5-iZn" eventType="touchUpInside" id="fTe-WK-RUT"/>
                                 </connections>
                             </button>

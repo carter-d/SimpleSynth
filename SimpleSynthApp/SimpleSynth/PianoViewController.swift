@@ -65,10 +65,19 @@ class PianoViewController: UIViewController {
     
     @IBAction func keyPressed(sender: KeyUIButton) {
       //  print(sender.stepsAwayFromC)
+//        exampleSynth.frequency = NoteFrequency.getFrequency(sender.stepsAwayFromC)
+//        exampleSynth.totalSampleIndex = 0
+    //    exampleSynth.mb.indexOfLastKeyPress = exampleSynth.totalSampleIndex
+        exampleSynth.keyHeld = false
+        
+    }
+    @IBAction func keyDown(sender: KeyUIButton) {
         exampleSynth.frequency = NoteFrequency.getFrequency(sender.stepsAwayFromC)
         exampleSynth.totalSampleIndex = 0
-    //    exampleSynth.mb.indexOfLastKeyPress = exampleSynth.totalSampleIndex
+        exampleSynth.keyHeld = true
+       // print("down")
     }
+    
     private let pianoLabel: UILabel = {
         let label = UILabel()
         label.text = "SimpleSynth"

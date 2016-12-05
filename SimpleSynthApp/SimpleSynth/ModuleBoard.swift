@@ -12,14 +12,20 @@ class ModuleBoard {
     var inputFrequency: Float = 261.1
     var currentFrequency: Float = 261.1
     var indexOfLastKeyPress: Int = 0
+    var keyCurrentlyHeld: Bool = false
+    var keyWasHeld: Bool = false
     var theBoard: [SoundModule] = [SoundModule]()
      private let queue :dispatch_queue_t = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
     func getOverallSound(index: Int) -> Float{
         if (inputFrequency != currentFrequency){
          //   dispatch_async(queue){
-               self.syncParametersToUserInput()
+               self.syncFrequencyToUserInput()
           //  }
             currentFrequency = inputFrequency
+        }
+        if (keyCurrentlyHeld != keyWasHeld){
+            self.syncKeyStateToEnvGenerators()
+            keyWasHeld = keyCurrentlyHeld
         }
         var result: Float = 0
         for m in theBoard{
@@ -29,7 +35,7 @@ class ModuleBoard {
     }
     
     //this method is in charge of making sure that the user's input through the keyboard get updated for all of the modules and the modules' controller modules
-    func syncParametersToUserInput(){
+    func syncFrequencyToUserInput(){
             for  m in theBoard{
                 if m is Oscillator{
                     var stack: [Oscillator] = [Oscillator]()
@@ -46,10 +52,18 @@ class ModuleBoard {
                     }
                     
                 }
-                else if m is EnvGenerator{
-                    m.updateInputParameter(Float(indexOfLastKeyPress))
-                    print(indexOfLastKeyPress)
-                }
+//                else if m is EnvGenerator{
+//                    m.updateInputParameter(Float(indexOfLastKeyPress))
+//                    print(indexOfLastKeyPress)
+//                }
             }
+    }
+    func syncKeyStateToEnvGenerators(){
+        for  m in theBoard{
+            if m is EnvGenerator{
+                let temp = m as! EnvGenerator
+                temp.keyHeld = keyCurrentlyHeld
+            }
+        }
     }
 }

@@ -57,7 +57,7 @@ class SettingViewController: UIViewController {
     }
 
     @IBAction func annoyingNoise(sender: AnyObject) {
-        exampleSynth.keyPressed = true
+      //  exampleSynth.keyPressed = true
         exampleSynth.playSin()
         
     }
