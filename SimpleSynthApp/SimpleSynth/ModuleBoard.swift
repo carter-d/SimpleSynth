@@ -14,10 +14,6 @@ class ModuleBoard {
     var indexOfLastKeyPress: Int = 0
     var theBoard: [SoundModule] = [SoundModule]()
      private let queue :dispatch_queue_t = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
-    init(){
-//        let defaultOsc = Oscillator()
-//        theBoard.append(defaultOsc)
-    }
     func getOverallSound(index: Int) -> Float{
         if (inputFrequency != currentFrequency){
          //   dispatch_async(queue){

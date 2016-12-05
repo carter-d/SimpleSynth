@@ -112,7 +112,6 @@ class Synth {
     catch{
     print("can't start engine")
     }
-    //  playerNode.pan = 0.8
     avPlayNode.play()
     
 
@@ -158,7 +157,6 @@ class Synth {
         catch{
             print("can't start engine")
         }
-        //  playerNode.pan = 0.8
         avPlayNode.play()
         
         
