@@ -11,7 +11,6 @@ import UIKit
 class Oscillator: SoundModule{
     var frequency: Float = 0
     var waveForm: BasicWaves? = BasicWaves.Sine
-    var samplingRate: Float = 44100
     var intensity: Float = 1
     var frequencyController: SoundModule? //an oscialltor's frequency can be controlled by another oscillator
     var intensityController: SoundModule? //an oscialltor's intensity can be controlled by another oscillator
