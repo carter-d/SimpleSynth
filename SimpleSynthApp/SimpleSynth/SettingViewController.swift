@@ -26,13 +26,20 @@ class SettingViewController: UIViewController {
     @IBOutlet var frequencyWaveFreq: UISlider!
     let aestheticOrange = UIColor(red: 255/255, green: 152/255, blue: 0, alpha: 1);
     
+    @IBAction func intensityFrequencyChanged(sender: UISlider) {
+        intOsc.frequency = sender.value
+    }
+    @IBAction func freqFrequencyChanged(sender: UISlider) {
+        freqOsc.frequency = sender.value
+    }
+    
    
     override func viewDidLoad() {
         
         for button in baseButtons{
             button.addTarget(self, action: #selector(SettingViewController.setBaseWave(_:)), forControlEvents: .TouchUpInside)
         }
-        
+       
         for button in freqButtons{
             button.addTarget(self, action: #selector(SettingViewController.setFreqWave(_:)), forControlEvents: .TouchUpInside)
         }
@@ -60,7 +67,7 @@ class SettingViewController: UIViewController {
     }
     
     override func shouldAutorotate() -> Bool {
-        return true
+        return false
     }
     
     override func didReceiveMemoryWarning() {
