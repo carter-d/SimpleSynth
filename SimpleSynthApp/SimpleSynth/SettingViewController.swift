@@ -17,6 +17,7 @@ class SettingViewController: UIViewController {
     var baseOsc = Oscillator()
     var freqOsc = Oscillator()
     var intOsc = Oscillator()
+    var eg = EnvGenerator()
     
     @IBOutlet var baseButtons: [UIButton]!
     @IBOutlet var freqButtons: [UIButton]!
@@ -39,7 +40,13 @@ class SettingViewController: UIViewController {
         }
         
         super.viewDidLoad()
+        eg.attack = 100
+        eg.decay = 1000
+        eg.sustain = 1000
+        eg.release = 1000
+        eg.sustainLevel = 0.5
         mb.theBoard.append(baseOsc)
+        mb.theBoard.append(eg)
         exampleSynth.mb = self.mb
         // Do any additional setup after loading the view, typically from a nib.
     }

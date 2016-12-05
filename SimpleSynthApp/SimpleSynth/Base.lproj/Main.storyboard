@@ -374,6 +374,7 @@
                         <outletCollection property="intensityButtons" destination="fCD-ih-Cjb" collectionClass="NSMutableArray" id="6DV-WX-dmD"/>
                         <outletCollection property="intensityButtons" destination="88z-MP-Bvh" collectionClass="NSMutableArray" id="VQS-4e-zAa"/>
                         <outletCollection property="intensityButtons" destination="0Cp-F8-g88" collectionClass="NSMutableArray" id="t05-cw-gHx"/>
+                        <segue destination="ajv-8s-sb7" kind="show" id="vMZ-rc-nKy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -617,6 +618,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="COY-nQ-sel" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="542" y="-353"/>
+        </scene>
+        <!--Env Generator View Controller-->
+        <scene sceneID="uIH-JH-5I1">
+            <objects>
+                <viewController id="ajv-8s-sb7" customClass="EnvGeneratorViewController" customModule="SimpleSynth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fza-oK-kgs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hep-wW-ztJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uvr-fa-ZD2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="teL-fn-b42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1386" y="334"/>
         </scene>
         <!--Feed-->
         <scene sceneID="9bK-u7-OnP">
