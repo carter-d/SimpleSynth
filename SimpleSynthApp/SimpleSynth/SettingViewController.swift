@@ -22,6 +22,8 @@ class SettingViewController: UIViewController {
     @IBOutlet var baseButtons: [UIButton]!
     @IBOutlet var freqButtons: [UIButton]!
     @IBOutlet var intensityButtons: [UIButton]!
+    @IBOutlet var intensityFreq: UISlider!
+    @IBOutlet var frequencyWaveFreq: UISlider!
     let aestheticOrange = UIColor(red: 255/255, green: 152/255, blue: 0, alpha: 1);
     
    
@@ -48,7 +50,17 @@ class SettingViewController: UIViewController {
         mb.theBoard.append(baseOsc)
         mb.theBoard.append(eg)
         exampleSynth.mb = self.mb
+        
+        // force load landscape
+        let temp = UIInterfaceOrientation.LandscapeLeft.rawValue
+        UIDevice.currentDevice().setValue(temp, forKey: "orientation")
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -177,7 +189,7 @@ class SettingViewController: UIViewController {
             freqButtons[0].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             freqOsc.waveForm = BasicWaves.Sine
-            freqOsc.frequency = 0.5
+            freqOsc.frequency = frequencyWaveFreq.value
             freqOsc.intensity = 5
             baseOsc.frequencyController = freqOsc
             
@@ -186,7 +198,7 @@ class SettingViewController: UIViewController {
             freqButtons[1].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             freqOsc.waveForm = BasicWaves.Triangle
-            freqOsc.frequency = 0.5
+            freqOsc.frequency = frequencyWaveFreq.value
             freqOsc.intensity = 5
             baseOsc.frequencyController = freqOsc
             
@@ -195,7 +207,7 @@ class SettingViewController: UIViewController {
             freqButtons[2].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             freqOsc.waveForm = BasicWaves.Square
-            freqOsc.frequency = 0.5
+            freqOsc.frequency = frequencyWaveFreq.value
             freqOsc.intensity = 5
             baseOsc.frequencyController = freqOsc
             
@@ -204,7 +216,7 @@ class SettingViewController: UIViewController {
             freqButtons[3].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             freqOsc.waveForm = BasicWaves.Sawtooth
-            freqOsc.frequency = 0.5
+            freqOsc.frequency = frequencyWaveFreq.value
             freqOsc.intensity = 5
             baseOsc.frequencyController = freqOsc
             
@@ -232,7 +244,7 @@ class SettingViewController: UIViewController {
             intensityButtons[0].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             intOsc.waveForm = BasicWaves.Sine
-            intOsc.frequency = 0.5
+            intOsc.frequency = intensityFreq.value
             baseOsc.intensityController = intOsc
             
         case .Triangle:
@@ -240,7 +252,7 @@ class SettingViewController: UIViewController {
             intensityButtons[1].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             intOsc.waveForm = BasicWaves.Triangle
-            intOsc.frequency = 0.5
+            intOsc.frequency = intensityFreq.value
             baseOsc.intensityController = intOsc
             
         case .Square:
@@ -248,7 +260,7 @@ class SettingViewController: UIViewController {
             intensityButtons[2].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             intOsc.waveForm = BasicWaves.Square
-            intOsc.frequency = 0.5
+            intOsc.frequency = intensityFreq.value
             baseOsc.intensityController = intOsc
             
         case .Sawtooth:
@@ -256,7 +268,7 @@ class SettingViewController: UIViewController {
             intensityButtons[3].setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
             
             intOsc.waveForm = BasicWaves.Sawtooth
-            intOsc.frequency = 0.5
+            intOsc.frequency = intensityFreq.value
             baseOsc.intensityController = intOsc
             
         case .None:
