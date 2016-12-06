@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var exampleSynth = Synth()
 
@@ -25,7 +26,8 @@ class SettingViewController: UIViewController {
     @IBOutlet var intensityFreq: UISlider!
     @IBOutlet var frequencyWaveFreq: UISlider!
     let aestheticOrange = UIColor(red: 255/255, green: 152/255, blue: 0, alpha: 1);
-    
+     let ref = FIRDatabase.database().reference()
+   
    
     @IBAction func attackValueChanged(sender: UISlider) {
         eg.attack = Int(sender.value)
@@ -95,6 +97,14 @@ class SettingViewController: UIViewController {
         exampleSynth.playSin()
         
     }
+    
+    @IBAction func saveClicked(sender: AnyObject) {
+        print("clicked")
+        self.ref.child("Synthesizer").setValue(mb)
+    
+
+    }
+        
     @IBAction func playSine(sender: UIButton) {
         var newMB = ModuleBoard()
         var osc = Oscillator()
