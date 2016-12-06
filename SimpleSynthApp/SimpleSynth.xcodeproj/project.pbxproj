@@ -28,6 +28,7 @@
 		71116E7C1DDD5D150033779C /* EnvGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E7B1DDD5D150033779C /* EnvGenerator.swift */; };
 		71116E7E1DDD5D490033779C /* Ampliflier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E7D1DDD5D490033779C /* Ampliflier.swift */; };
 		71116E801DDD6E030033779C /* ModuleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E7F1DDD6E030033779C /* ModuleBoard.swift */; };
+		71BD7F3F1DF6869A006ED99E /* EnvGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD7F3E1DF6869A006ED99E /* EnvGeneratorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		71116E7B1DDD5D150033779C /* EnvGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvGenerator.swift; sourceTree = "<group>"; };
 		71116E7D1DDD5D490033779C /* Ampliflier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ampliflier.swift; sourceTree = "<group>"; };
 		71116E7F1DDD6E030033779C /* ModuleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBoard.swift; sourceTree = "<group>"; };
+		71BD7F3E1DF6869A006ED99E /* EnvGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvGeneratorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				71116E791DDD56CD0033779C /* SoundModule.swift */,
 				710148831DE2B5CF00C6AC9D /* FeedCellView.swift */,
 				710148841DE2B5CF00C6AC9D /* FeedViewController.swift */,
+				71BD7F3E1DF6869A006ED99E /* EnvGeneratorViewController.swift */,
 				710148791DE2A46000C6AC9D /* PianoViewController.swift */,
 				71116E751DDC58140033779C /* BasicWaves.swift */,
 				688C6B6C1DD655E9004BE9CA /* Main.storyboard */,
@@ -190,6 +193,7 @@
 				71116E721DDC53BD0033779C /* DummyKeyboard.swift in Sources */,
 				7101487C1DE2A47F00C6AC9D /* KeyUIButton.swift in Sources */,
 				688C6B7D1DD658A5004BE9CA /* Synth.swift in Sources */,
+				71BD7F3F1DF6869A006ED99E /* EnvGeneratorViewController.swift in Sources */,
 				71116E801DDD6E030033779C /* ModuleBoard.swift in Sources */,
 				71116E7C1DDD5D150033779C /* EnvGenerator.swift in Sources */,
 				688C6B6B1DD655E9004BE9CA /* SettingViewController.swift in Sources */,
