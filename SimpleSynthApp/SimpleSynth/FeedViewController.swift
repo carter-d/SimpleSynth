@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
+
 class FeedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate
 {
    
+    var settingVC: SettingViewController = SettingViewController()
 
    
     @IBOutlet weak var feedCollectionView: UICollectionView!
@@ -25,8 +27,11 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
    // var exampleSynth = Synth()
     
     override func viewDidLoad() {
-        var lastSynth = exampleSynth
-      
+      //  var lastSynth = exampleSynth
+        var vcs = self.tabBarController?.viewControllers
+        //print("LOOK AT ME " + vcs![1] is SettingViewController)
+        settingVC = vcs![1] as! SettingViewController
+        
         activityInd.hidesWhenStopped = true
         self.feedCollectionView.dataSource = self
         self.feedCollectionView.delegate = self
@@ -138,9 +143,23 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             print("clicked")
                 index = indexPath.row
             let mod = synths[index]
-                print(mod)
+           //     print(mod)
             exampleSynth.updateModuleBoard(mod)
-           exampleSynth.playSoundFromModule()
+            settingVC.mb = mod
+            
+            let newOsc = mod.theBoard[0] as! Oscillator
+            settingVC.baseOsc = newOsc
+            if ( newOsc.frequencyController != nil){
+                let newFO = newOsc.frequencyController as! Oscillator
+                settingVC.freqOsc = newFO
+            }
+            if (newOsc.intensityController != nil){
+                let newIO = newOsc.intensityController as! Oscillator
+            
+                settingVC.intOsc = newIO
+            }
+        
+         //  exampleSynth.playSoundFromModule()
         }
     }
     
@@ -160,25 +179,4 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.backgroundColor = UIColor.whiteColor()
         return cell
     }
-    //this method returns a synth object for you to try
-    func setSynthObject()-> Synth{
-        var newMB = ModuleBoard()
-        var osc = Oscillator()
-        osc.isTiedToKBInput = true
-        var intOsc = Oscillator()
-        intOsc.waveForm = BasicWaves.Sine
-        intOsc.frequency = 10
-        osc.intensityController = intOsc
-        
-        var freqOsc = Oscillator()
-        freqOsc.waveForm = BasicWaves.Triangle
-        freqOsc.frequency = 0.5
-        freqOsc.intensity = 5
-        osc.frequencyController = freqOsc
-        
-        osc.waveForm = BasicWaves.Sawtooth
-        newMB.theBoard.append(osc)
-        exampleSynth.mb = newMB
-        return exampleSynth
-    }
-}
+  }

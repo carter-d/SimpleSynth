@@ -19,6 +19,9 @@ class SettingViewController: UIViewController {
     var freqOsc = Oscillator()
     var intOsc = Oscillator()
     var eg = EnvGenerator()
+    var phantomOscButton: UIButton = UIButton()
+    
+   
     
     @IBOutlet var baseButtons: [UIButton]!
     @IBOutlet var freqButtons: [UIButton]!
@@ -28,7 +31,9 @@ class SettingViewController: UIViewController {
     let aestheticOrange = UIColor(red: 255/255, green: 152/255, blue: 0, alpha: 1);
      let ref = FIRDatabase.database().reference()
    
-   
+    func updateSettingsMB(newMB: ModuleBoard){
+        self.mb = newMB
+    }
     @IBAction func attackValueChanged(sender: UISlider) {
         eg.attack = Int(sender.value)
     }
@@ -99,8 +104,8 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func saveClicked(sender: AnyObject) {
-        print("clicked")
-        print(mb.toJsonString())
+       // print("clicked")
+      //  print(mb.toJsonString())
         let entry = self.ref.child("Synthesizer").childByAutoId()
         entry.child("MB").setValue(mb.toJsonString())
         entry.child("user").setValue("Estee")
@@ -149,6 +154,25 @@ class SettingViewController: UIViewController {
     }
     
     enum WaveFormType: Int {case Sine = 0, Triangle = 1, Square = 2, Sawtooth = 3, None = 4}
+    func updateSettingDisplay(){
+        if (baseOsc.waveForm == nil) {
+            phantomOscButton.tag = 4
+        }
+        else {
+        switch(baseOsc.waveForm!){
+        
+        case .Square:
+            phantomOscButton.tag = 2
+        case .Sine:
+            phantomOscButton.tag = 0
+        case .Sawtooth:
+            phantomOscButton.tag = 3
+        case.Triangle:
+            phantomOscButton.tag = 1
+
+        }
+        }
+    }
     
     func setBaseWave(sender: UIButton){
         
