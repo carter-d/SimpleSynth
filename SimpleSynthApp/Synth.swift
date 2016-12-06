@@ -162,4 +162,7 @@ class Synth {
         
         
     }
+    func updateModuleBoard(newMb: ModuleBoard){
+        self.mb = newMb
+    }
 }
