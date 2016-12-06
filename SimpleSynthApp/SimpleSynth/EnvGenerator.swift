@@ -15,7 +15,7 @@ class EnvGenerator: SoundModule{
     var sustain: Int = 2000
     var sustainLevel: Float = 0.5
     var intensity: Float = 1
-    var release: Int = 2000
+    var release1: Int = 2000
     var keyHeld: Bool = false
     
     override func getOutput(inputValue: Float,index: Int)->Float{
@@ -42,9 +42,9 @@ class EnvGenerator: SoundModule{
         }
             
         //release phase
-        else if (index < (attack+decay+sustain+release)*Int(samplingRate)/1000){
+        else if (index < (attack+decay+sustain+release1)*Int(samplingRate)/1000){
             let relIndex = index - (attack+decay+sustain)*Int(samplingRate)/1000
-            let factor = (Float(relIndex)*(-sustainLevel) / (Float(release)*samplingRate/1000))+sustainLevel
+            let factor = (Float(relIndex)*(-sustainLevel) / (Float(release1)*samplingRate/1000))+sustainLevel
             //  print(factor)
             output = output*factor*intensity
         }

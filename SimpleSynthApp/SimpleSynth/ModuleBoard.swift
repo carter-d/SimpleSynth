@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ModuleBoard {
+class ModuleBoard: EVObject{
     var inputFrequency: Float = 261.1
     var currentFrequency: Float = 261.1
     var indexOfLastKeyPress: Int = 0

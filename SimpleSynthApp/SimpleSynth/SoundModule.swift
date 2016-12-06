@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class SoundModule {
+class SoundModule: EVObject {
     var isTiedToKBInput: Bool = false
     var samplingRate: Float = 44100
     func getOutput(inputValue: Float,index: Int)->Float{

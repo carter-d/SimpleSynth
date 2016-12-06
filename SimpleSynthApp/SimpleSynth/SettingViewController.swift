@@ -39,7 +39,7 @@ class SettingViewController: UIViewController {
             eg.sustain = Int(sender.value)
     }
     @IBAction func releaseValueChanged(sender: UISlider) {
-            eg.release = Int(sender.value)
+            eg.release1 = Int(sender.value)
     }
     @IBAction func sustainLevelChanged(sender: UISlider) {
             eg.sustainLevel = sender.value
@@ -69,7 +69,7 @@ class SettingViewController: UIViewController {
         eg.attack = 100
         eg.decay = 1000
         eg.sustain = 1000
-        eg.release = 1000
+        eg.release1 = 1000
         eg.sustainLevel = 0.5
         mb.theBoard.append(baseOsc)
         mb.theBoard.append(eg)
@@ -100,7 +100,8 @@ class SettingViewController: UIViewController {
     
     @IBAction func saveClicked(sender: AnyObject) {
         print("clicked")
-        self.ref.child("Synthesizer").setValue(mb)
+        print(mb.toJsonString())
+        self.ref.child("Synthesizer").setValue(mb.toJsonString())
     
 
     }
