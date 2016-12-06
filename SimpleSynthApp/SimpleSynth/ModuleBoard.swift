@@ -8,14 +8,14 @@
 
 import Foundation
 
-class ModuleBoard {
+class ModuleBoard: EVObject{
     var inputFrequency: Float = 261.1
     var currentFrequency: Float = 261.1
     var indexOfLastKeyPress: Int = 0
     var keyCurrentlyHeld: Bool = false
     var keyWasHeld: Bool = false
     var theBoard: [SoundModule] = [SoundModule]()
-     private let queue :dispatch_queue_t = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
+     private var queue :dispatch_queue_t = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
     func getOverallSound(index: Int) -> Float{
         if (inputFrequency != currentFrequency){
          //   dispatch_async(queue){
@@ -64,6 +64,14 @@ class ModuleBoard {
                 let temp = m as! EnvGenerator
                 temp.keyHeld = keyCurrentlyHeld
             }
+        }
+    }
+    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        switch key {
+        case "queue":
+           queue = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
+        default:
+            print("---> setValue for key '\(key)' should be handled.")
         }
     }
 }

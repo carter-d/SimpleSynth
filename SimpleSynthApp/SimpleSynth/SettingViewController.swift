@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 var exampleSynth = Synth()
 
@@ -25,7 +26,8 @@ class SettingViewController: UIViewController {
     @IBOutlet var intensityFreq: UISlider!
     @IBOutlet var frequencyWaveFreq: UISlider!
     let aestheticOrange = UIColor(red: 255/255, green: 152/255, blue: 0, alpha: 1);
-    
+     let ref = FIRDatabase.database().reference()
+   
    
     @IBAction func attackValueChanged(sender: UISlider) {
         eg.attack = Int(sender.value)
@@ -37,7 +39,7 @@ class SettingViewController: UIViewController {
             eg.sustain = Int(sender.value)
     }
     @IBAction func releaseValueChanged(sender: UISlider) {
-            eg.release = Int(sender.value)
+            eg.release1 = Int(sender.value)
     }
     @IBAction func sustainLevelChanged(sender: UISlider) {
             eg.sustainLevel = sender.value
@@ -67,7 +69,7 @@ class SettingViewController: UIViewController {
         eg.attack = 100
         eg.decay = 1000
         eg.sustain = 1000
-        eg.release = 1000
+        eg.release1 = 1000
         eg.sustainLevel = 0.5
         mb.theBoard.append(baseOsc)
         mb.theBoard.append(eg)
@@ -95,6 +97,16 @@ class SettingViewController: UIViewController {
         exampleSynth.playSin()
         
     }
+    
+    @IBAction func saveClicked(sender: AnyObject) {
+        print("clicked")
+        print(mb.toJsonString())
+        let entry = self.ref.child("Synthesizer").childByAutoId()
+        entry.child("MB").setValue(mb.toJsonString())
+        entry.child("user").setValue("Estee")
+
+    }
+        
     @IBAction func playSine(sender: UIButton) {
         var newMB = ModuleBoard()
         var osc = Oscillator()

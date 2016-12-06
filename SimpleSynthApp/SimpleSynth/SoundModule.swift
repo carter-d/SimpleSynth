@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class SoundModule {
+class SoundModule: EVObject {
     var isTiedToKBInput: Bool = false
     var samplingRate: Float = 44100
     func getOutput(inputValue: Float,index: Int)->Float{
@@ -15,4 +15,13 @@ class SoundModule {
     }
     func updateInputParameter(input: Float){
     }
+    override func getSpecificType(dict: NSDictionary) -> EVObject {
+        print("hhhh")
+        print(dict)
+        if dict["attack"] != nil {
+            return EnvGenerator()
+        } else {
+            return Oscillator()
+        }
+}
 }

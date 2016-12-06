@@ -29,9 +29,19 @@
 		71116E7E1DDD5D490033779C /* Ampliflier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E7D1DDD5D490033779C /* Ampliflier.swift */; };
 		71116E801DDD6E030033779C /* ModuleBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71116E7F1DDD6E030033779C /* ModuleBoard.swift */; };
 		71BD7F3F1DF6869A006ED99E /* EnvGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BD7F3E1DF6869A006ED99E /* EnvGeneratorViewController.swift */; };
+		73D9129A1DF69286003AA17F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D912991DF69286003AA17F /* GoogleService-Info.plist */; };
+		73D9129C1DF69F2E003AA17F /* EVObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D9129B1DF69F2E003AA17F /* EVObject.swift */; };
+		73D9129E1DF69F37003AA17F /* EVReflection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D9129D1DF69F37003AA17F /* EVReflection.swift */; };
+		73D912A61DF69F9D003AA17F /* EVReflection.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 73D912A01DF69F9D003AA17F /* EVReflection.xcconfig */; };
+		73D912A71DF69F9D003AA17F /* EVReflection-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 73D912A11DF69F9D003AA17F /* EVReflection-dummy.m */; };
+		73D912A81DF69F9D003AA17F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D912A41DF69F9D003AA17F /* Info.plist */; };
+		73D912AA1DF69FA5003AA17F /* EVWorkaroundHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D912A91DF69FA5003AA17F /* EVWorkaroundHelpers.swift */; };
+		73D912AC1DF69FA8003AA17F /* EVExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D912AB1DF69FA8003AA17F /* EVExtensions.swift */; };
+		D2F7D20FF822D574EA4F73E0 /* Pods_SimpleSynth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8821703D09A196B18501855 /* Pods_SimpleSynth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16D7F5886C589D8328DD2BA3 /* Pods-SimpleSynth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSynth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSynth/Pods-SimpleSynth.debug.xcconfig"; sourceTree = "<group>"; };
 		688C6B651DD655E9004BE9CA /* SimpleSynth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleSynth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		688C6B681DD655E9004BE9CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		688C6B6A1DD655E9004BE9CA /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +66,19 @@
 		71116E7D1DDD5D490033779C /* Ampliflier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ampliflier.swift; sourceTree = "<group>"; };
 		71116E7F1DDD6E030033779C /* ModuleBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBoard.swift; sourceTree = "<group>"; };
 		71BD7F3E1DF6869A006ED99E /* EnvGeneratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvGeneratorViewController.swift; sourceTree = "<group>"; };
+		73D912991DF69286003AA17F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73D9129B1DF69F2E003AA17F /* EVObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVObject.swift; sourceTree = "<group>"; };
+		73D9129D1DF69F37003AA17F /* EVReflection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVReflection.swift; sourceTree = "<group>"; };
+		73D9129F1DF69F9D003AA17F /* EVReflection.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = EVReflection.modulemap; sourceTree = "<group>"; };
+		73D912A01DF69F9D003AA17F /* EVReflection.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = EVReflection.xcconfig; sourceTree = "<group>"; };
+		73D912A11DF69F9D003AA17F /* EVReflection-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "EVReflection-dummy.m"; sourceTree = "<group>"; };
+		73D912A21DF69F9D003AA17F /* EVReflection-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EVReflection-prefix.pch"; sourceTree = "<group>"; };
+		73D912A31DF69F9D003AA17F /* EVReflection-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EVReflection-umbrella.h"; sourceTree = "<group>"; };
+		73D912A41DF69F9D003AA17F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73D912A91DF69FA5003AA17F /* EVWorkaroundHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVWorkaroundHelpers.swift; sourceTree = "<group>"; };
+		73D912AB1DF69FA8003AA17F /* EVExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVExtensions.swift; sourceTree = "<group>"; };
+		B8821703D09A196B18501855 /* Pods_SimpleSynth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleSynth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E99DD741520D85FF0073B5FC /* Pods-SimpleSynth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleSynth.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleSynth/Pods-SimpleSynth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +86,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F7D20FF822D574EA4F73E0 /* Pods_SimpleSynth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		245A62101F80E1DBC4C25776 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8821703D09A196B18501855 /* Pods_SimpleSynth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		688C6B5C1DD655E9004BE9CA = {
 			isa = PBXGroup;
 			children = (
 				688C6B671DD655E9004BE9CA /* SimpleSynth */,
 				688C6B661DD655E9004BE9CA /* Products */,
+				C14602A4B414124FBCDF8486 /* Pods */,
+				245A62101F80E1DBC4C25776 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +122,7 @@
 		688C6B671DD655E9004BE9CA /* SimpleSynth */ = {
 			isa = PBXGroup;
 			children = (
+				73D912991DF69286003AA17F /* GoogleService-Info.plist */,
 				688C6B7C1DD658A5004BE9CA /* Synth.swift */,
 				71116E6F1DDC4F8B0033779C /* NoteFrequency.swift */,
 				688C6B681DD655E9004BE9CA /* AppDelegate.swift */,
@@ -111,8 +146,36 @@
 				688C6B741DD655E9004BE9CA /* Info.plist */,
 				7101487D1DE2A5A900C6AC9D /* black.jpg */,
 				7101487E1DE2A5A900C6AC9D /* white.jpg */,
+				73D9129B1DF69F2E003AA17F /* EVObject.swift */,
+				73D9129D1DF69F37003AA17F /* EVReflection.swift */,
+				73D912AB1DF69FA8003AA17F /* EVExtensions.swift */,
+				73D912A91DF69FA5003AA17F /* EVWorkaroundHelpers.swift */,
+				73D912A51DF69F9D003AA17F /* Support Files */,
 			);
 			path = SimpleSynth;
+			sourceTree = "<group>";
+		};
+		73D912A51DF69F9D003AA17F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				73D9129F1DF69F9D003AA17F /* EVReflection.modulemap */,
+				73D912A01DF69F9D003AA17F /* EVReflection.xcconfig */,
+				73D912A11DF69F9D003AA17F /* EVReflection-dummy.m */,
+				73D912A21DF69F9D003AA17F /* EVReflection-prefix.pch */,
+				73D912A31DF69F9D003AA17F /* EVReflection-umbrella.h */,
+				73D912A41DF69F9D003AA17F /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Pods/EVReflection/../Target Support Files/EVReflection";
+			sourceTree = SOURCE_ROOT;
+		};
+		C14602A4B414124FBCDF8486 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16D7F5886C589D8328DD2BA3 /* Pods-SimpleSynth.debug.xcconfig */,
+				E99DD741520D85FF0073B5FC /* Pods-SimpleSynth.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,9 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 688C6B771DD655E9004BE9CA /* Build configuration list for PBXNativeTarget "SimpleSynth" */;
 			buildPhases = (
+				92F7DB80A4DC6C8184BD25DB /* [CP] Check Pods Manifest.lock */,
 				688C6B611DD655E9004BE9CA /* Sources */,
 				688C6B621DD655E9004BE9CA /* Frameworks */,
 				688C6B631DD655E9004BE9CA /* Resources */,
+				877F49B9E2914781FD4E6A73 /* [CP] Embed Pods Frameworks */,
+				BC34641E417CEF38847FD1DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -175,14 +241,65 @@
 			files = (
 				710148801DE2A5A900C6AC9D /* white.jpg in Resources */,
 				688C6B731DD655E9004BE9CA /* LaunchScreen.storyboard in Resources */,
+				73D912A81DF69F9D003AA17F /* Info.plist in Resources */,
+				73D912A61DF69F9D003AA17F /* EVReflection.xcconfig in Resources */,
 				710148821DE2A91F00C6AC9D /* PianoPoster.jpg in Resources */,
 				7101487F1DE2A5A900C6AC9D /* black.jpg in Resources */,
 				688C6B701DD655E9004BE9CA /* Assets.xcassets in Resources */,
 				688C6B6E1DD655E9004BE9CA /* Main.storyboard in Resources */,
+				73D9129A1DF69286003AA17F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		877F49B9E2914781FD4E6A73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSynth/Pods-SimpleSynth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92F7DB80A4DC6C8184BD25DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC34641E417CEF38847FD1DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleSynth/Pods-SimpleSynth-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		688C6B611DD655E9004BE9CA /* Sources */ = {
@@ -190,12 +307,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				710148851DE2B5CF00C6AC9D /* FeedCellView.swift in Sources */,
+				73D912A71DF69F9D003AA17F /* EVReflection-dummy.m in Sources */,
+				73D9129C1DF69F2E003AA17F /* EVObject.swift in Sources */,
 				71116E721DDC53BD0033779C /* DummyKeyboard.swift in Sources */,
+				73D9129E1DF69F37003AA17F /* EVReflection.swift in Sources */,
 				7101487C1DE2A47F00C6AC9D /* KeyUIButton.swift in Sources */,
 				688C6B7D1DD658A5004BE9CA /* Synth.swift in Sources */,
 				71BD7F3F1DF6869A006ED99E /* EnvGeneratorViewController.swift in Sources */,
 				71116E801DDD6E030033779C /* ModuleBoard.swift in Sources */,
 				71116E7C1DDD5D150033779C /* EnvGenerator.swift in Sources */,
+				73D912AC1DF69FA8003AA17F /* EVExtensions.swift in Sources */,
+				73D912AA1DF69FA5003AA17F /* EVWorkaroundHelpers.swift in Sources */,
 				688C6B6B1DD655E9004BE9CA /* SettingViewController.swift in Sources */,
 				710148861DE2B5CF00C6AC9D /* FeedViewController.swift in Sources */,
 				71116E741DDC54BE0033779C /* Oscillator.swift in Sources */,
@@ -313,6 +435,7 @@
 		};
 		688C6B781DD655E9004BE9CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16D7F5886C589D8328DD2BA3 /* Pods-SimpleSynth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -328,6 +451,7 @@
 		};
 		688C6B791DD655E9004BE9CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E99DD741520D85FF0073B5FC /* Pods-SimpleSynth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

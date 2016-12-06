@@ -17,7 +17,35 @@ class Oscillator: SoundModule{
     var baseFrequency: Float?
     var baseIntensity: Float?
     var stepsFromUserInput: Int = 0
-
+   
+    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        switch key {
+        case "stepsFromUserInput":
+            stepsFromUserInput = (value as? Int)!
+        case "frequency":
+            frequency = (value as? Float)!
+        case "intensity":
+            intensity = (value as? Float)!
+        case "waveForm":
+            if (value as! String == "Triangle"){
+                print("hhhhherrrreee")
+                waveForm = BasicWaves.Triangle
+            }
+            
+            if (value as! String == "Square"){
+                waveForm = BasicWaves.Square
+            }
+            if (value as! String == "Sawtooth"){
+                waveForm = BasicWaves.Sawtooth
+            }
+            else{
+                print(value)
+                waveForm = BasicWaves.Sine
+            }
+        default:
+            print("---> setValue for key '\(key)' should be handled.")
+        }
+    }
     override func getOutput(inputValue: Float,index: Int)->Float{
         var outputWaveValue: Float = 0.0
         var freq = frequency
