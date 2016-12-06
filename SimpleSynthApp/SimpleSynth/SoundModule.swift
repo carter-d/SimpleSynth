@@ -15,4 +15,13 @@ class SoundModule: EVObject {
     }
     func updateInputParameter(input: Float){
     }
+    override func getSpecificType(dict: NSDictionary) -> EVObject {
+        print("hhhh")
+        print(dict)
+        if dict["attack"] != nil {
+            return EnvGenerator()
+        } else {
+            return Oscillator()
+        }
+}
 }

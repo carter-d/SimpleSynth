@@ -18,6 +18,27 @@ class EnvGenerator: SoundModule{
     var release1: Int = 2000
     var keyHeld: Bool = false
     
+    override func setValue(value: AnyObject!, forUndefinedKey key: String) {
+        switch key {
+        case "attack":
+            attack = (value as? Int)!
+        case "release1":
+            release1 = (value as? Int)!
+        case "keyHeld":
+            keyHeld = (value as? Bool)!
+        case "sustainLebel":
+            sustainLevel = (value as? Float)!
+        case "intensity":
+            intensity = (value as? Float)!
+        case "decay":
+            decay = (value as? Int)!
+        case "sustain":
+            sustain = (value as? Int)!
+        default:
+            print("---> setValue for key '\(key)' should be handled.")
+        }
+    }
+
     override func getOutput(inputValue: Float,index: Int)->Float{
         var output: Float = inputValue
         //attack phase

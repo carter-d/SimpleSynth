@@ -101,8 +101,9 @@ class SettingViewController: UIViewController {
     @IBAction func saveClicked(sender: AnyObject) {
         print("clicked")
         print(mb.toJsonString())
-        self.ref.child("Synthesizer").setValue(mb.toJsonString())
-    
+        let entry = self.ref.child("Synthesizer").childByAutoId()
+        entry.child("MB").setValue(mb.toJsonString())
+        entry.child("user").setValue("Estee")
 
     }
         
