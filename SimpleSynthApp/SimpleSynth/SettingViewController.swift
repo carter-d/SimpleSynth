@@ -58,6 +58,7 @@ class SettingViewController: UIViewController {
         intOsc.frequency = sender.value
     }
     override func viewDidLoad() {
+        baseOsc.waveForm = BasicWaves.Sine
         
         for button in baseButtons{
             button.addTarget(self, action: #selector(SettingViewController.setBaseWave(_:)), forControlEvents: .TouchUpInside)
@@ -107,9 +108,24 @@ class SettingViewController: UIViewController {
     @IBAction func saveClicked(sender: AnyObject) {
        // print("clicked")
       //  print(mb.toJsonString())
-        let entry = self.ref.child("Synthesizer").childByAutoId()
-        entry.child("MB").setValue(mb.toJsonString())
-        entry.child("user").setValue("Estee")
+        
+        var alert = UIAlertController(title: "Share!", message: "Name Your Synth", preferredStyle: .Alert)
+        alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
+            textField.text = "Name Here"
+        })
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { [weak alert] (action) -> Void in
+            let textField = alert!.textFields![0] as UITextField
+            self.mb.name = textField.text!
+            let entry = self.ref.child("Synthesizer").childByAutoId()
+            entry.child("MB").setValue(self.mb.toJsonString())
+            entry.child("user").setValue("MusicLover")
+            }))
+
+        self.presentViewController(alert, animated: true, completion: nil)
+        
+        
+        
+        
 
     }
         

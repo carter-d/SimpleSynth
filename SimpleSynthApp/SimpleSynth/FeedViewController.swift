@@ -162,6 +162,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             let newEg = mod.theBoard[1] as! EnvGenerator
             settingVC.eg = newEg
          //  exampleSynth.playSoundFromModule()
+            
         }
     }
     
@@ -179,7 +180,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.Title.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         cell.Title.textColor = UIColor.whiteColor()
         cell.backgroundColor = UIColor.whiteColor()
-        cell.Title = UILabel()
+        //cell.Title = UILabel()
+        cell.Title.text = synths[indexPath.item].name
         return cell
     }
   }

@@ -14,6 +14,7 @@ class ModuleBoard: EVObject{
     var indexOfLastKeyPress: Int = 0
     var keyCurrentlyHeld: Bool = false
     var keyWasHeld: Bool = false
+    var name: String = "NameHere"
     var theBoard: [SoundModule] = [SoundModule]()
      private var queue :dispatch_queue_t = dispatch_queue_create("SynthQueue", DISPATCH_QUEUE_SERIAL)
     func getOverallSound(index: Int) -> Float{
