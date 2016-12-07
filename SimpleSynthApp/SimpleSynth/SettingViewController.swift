@@ -19,6 +19,7 @@ class SettingViewController: UIViewController {
     var freqOsc = Oscillator()
     var intOsc = Oscillator()
     var eg = EnvGenerator()
+
     var phantomOscButton: UIButton = UIButton()
     
    
@@ -169,9 +170,10 @@ class SettingViewController: UIViewController {
             phantomOscButton.tag = 3
         case.Triangle:
             phantomOscButton.tag = 1
-
         }
+            
         }
+        setBaseWave(phantomOscButton)
     }
     
     func setBaseWave(sender: UIButton){

@@ -15,7 +15,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
    
     var settingVC: SettingViewController = SettingViewController()
 
-   
+    
     @IBOutlet weak var feedCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var activityInd: UIActivityIndicatorView!
@@ -140,9 +140,10 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             }
             else{
  **/
-            print("clicked")
+           // print("clicked")
                 index = indexPath.row
             let mod = synths[index]
+            print(mod)
            //     print(mod)
             exampleSynth.updateModuleBoard(mod)
             settingVC.mb = mod
@@ -158,7 +159,8 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
             
                 settingVC.intOsc = newIO
             }
-        
+            let newEg = mod.theBoard[1] as! EnvGenerator
+            settingVC.eg = newEg
          //  exampleSynth.playSoundFromModule()
         }
     }
@@ -177,6 +179,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.Title.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         cell.Title.textColor = UIColor.whiteColor()
         cell.backgroundColor = UIColor.whiteColor()
+        cell.Title = UILabel()
         return cell
     }
   }

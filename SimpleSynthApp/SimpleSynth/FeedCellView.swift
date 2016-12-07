@@ -21,7 +21,7 @@ class FeedCellView: UICollectionViewCell {
     }
     func updateUI(){
         Poster.image = UIImage(named: "Play")
-        Title.text = "Test Synth"
+        Title.text = "Try Me!"
     }
  
 }
