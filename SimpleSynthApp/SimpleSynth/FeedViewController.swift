@@ -26,7 +26,9 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     
    
    // var exampleSynth = Synth()
- 
+    override func viewDidAppear(animated: Bool) {
+        refreshFeed()
+    }
     @IBAction func refreshFeedPressed(sender: UIButton) {
         refreshFeed()
     }
