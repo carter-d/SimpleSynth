@@ -26,7 +26,19 @@ class PianoViewController: UIViewController {
     @IBOutlet weak var bButton: KeyUIButton!
     @IBOutlet weak var highCButton: KeyUIButton!
     
+    var octave: Int = 0
+    
     override func viewDidLoad() {
+        
+        //the swipe code is adopted from iOS creator
+        // https://www.ioscreator.com/tutorials/detecting-swipe-gesture-tutorial-ios8-swift
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
         super.viewDidLoad()
         cButton.stepsAwayFromC = 0
         cSharpButton.stepsAwayFromC = 1
@@ -72,7 +84,7 @@ class PianoViewController: UIViewController {
         
     }
     @IBAction func keyDown(sender: KeyUIButton) {
-        exampleSynth.frequency = NoteFrequency.getFrequency(sender.stepsAwayFromC)
+        exampleSynth.frequency = NoteFrequency.getFrequency(sender.stepsAwayFromC + (octave*12))
         exampleSynth.totalSampleIndex = 0
         exampleSynth.keyHeld = true
        // print("down")
@@ -90,6 +102,19 @@ class PianoViewController: UIViewController {
         return label
     }()
     
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            if (octave < 3){
+            octave = octave + 1
+            }
+        }
+        if (sender.direction == .Right) {
+                        if (octave > -3){
+            octave = octave - 1
+            }
+        }
+        print(octave)
+    }
     
 }
 

@@ -109,6 +109,9 @@ class SettingViewController: UIViewController {
        // print("clicked")
       //  print(mb.toJsonString())
         
+        
+        //User dialog code is adopted from Andy Ibanez from StackOverflow
+        //http://stackoverflow.com/questions/26567413/get-input-value-from-textfield-in-ios-alert-in-swift
         var alert = UIAlertController(title: "Share!", message: "Name Your Synth", preferredStyle: .Alert)
         alert.addTextFieldWithConfigurationHandler({ (textField) -> Void in
             textField.text = "Name Here"
