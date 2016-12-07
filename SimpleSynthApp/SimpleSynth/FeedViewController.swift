@@ -27,7 +27,47 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
    
    // var exampleSynth = Synth()
  
-    
+    @IBAction func refreshFeedPressed(sender: UIButton) {
+        refreshFeed()
+    }
+    func refreshFeed(){
+        synths = [ModuleBoard]()
+        let synthesizers = ref.childByAppendingPath("Synthesizer")
+        synthesizers.queryOrderedByChild("MB").observeEventType(.ChildAdded, withBlock: { snapshot in
+            if let MB = snapshot.value!["MB"] as? String{
+                let mb = self.dictionaryFromJson(MB)
+                
+                var newMB = ModuleBoard(dictionary: mb)
+                /**
+                 newMB.currentFrequency = (mb["currentFrequency"] as? Float)!
+                 newMB.inputFrequency = (mb["inputFrequency"] as? Float)!
+                 newMB.keyCurrentlyHeld = (mb["keyCurrentlyHeld"] as? Bool)!
+                 newMB.keyWasHeld = (mb["keyWasHeld"] as? Bool)!
+                 newMB.indexOfLastKeyPress = mb["indexOfLastKeyPress"] as! Int
+                 mb.key
+                 print("mb")
+                 print(newMB)
+                 **/
+                self.synths.append(newMB)
+                print(self.synths.count)
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.feedCollectionView.reloadData()
+                    
+                }
+                
+                print("count")
+                print(self.synths.count)
+                
+            }
+            
+            if let user = snapshot.value!["user"] as? String {
+                print("\(snapshot.key) has user: \(user)")
+            }
+            
+            
+        })
+
+    }
     override func viewDidLoad() {
       //  var lastSynth = exampleSynth
         searchBar.hidden = true

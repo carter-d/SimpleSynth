@@ -113,7 +113,7 @@ class PianoViewController: UIViewController {
             octave = octave - 1
             }
         }
-        print(octave)
+   //     print(octave)
     }
     
 }
