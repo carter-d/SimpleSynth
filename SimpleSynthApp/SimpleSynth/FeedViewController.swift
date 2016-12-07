@@ -23,11 +23,14 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     var index = -1
     let ref = FIRDatabase.database().reference()
     
+    
    
    // var exampleSynth = Synth()
+ 
     
     override func viewDidLoad() {
       //  var lastSynth = exampleSynth
+        searchBar.hidden = true
         var vcs = self.tabBarController?.viewControllers
         //print("LOOK AT ME " + vcs![1] is SettingViewController)
         settingVC = vcs![1] as! SettingViewController
@@ -59,14 +62,15 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
                     
                 }
 
-                print(self.synths.count)
+                //print(self.synths.count)
  
             }
  
             if let user = snapshot.value!["user"] as? String {
                 print("\(snapshot.key) has user: \(user)")
             }
- 
+            
+           
         })
         
         /**
@@ -96,6 +100,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
         singleTaps.requireGestureRecognizerToFail(doubleTaps);
         self.view.addGestureRecognizer(singleTaps)
         self.view.addGestureRecognizer(doubleTaps)
+        
     }
     func dictionaryFromJson(json: String?) -> NSDictionary {
         var result = NSDictionary()
@@ -143,7 +148,7 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
            // print("clicked")
                 index = indexPath.row
             let mod = synths[index]
-            print(mod)
+          //  print(mod)
            //     print(mod)
             exampleSynth.updateModuleBoard(mod)
             settingVC.mb = mod
@@ -174,7 +179,6 @@ class FeedViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
 
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath)->UICollectionViewCell{
-        print("here")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.CellIdentifier, forIndexPath:indexPath) as! FeedCellView
         cell.synth = synths[indexPath.item]
         cell.Title.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)

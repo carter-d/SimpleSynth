@@ -50,12 +50,18 @@ class Oscillator: SoundModule{
         var outputWaveValue: Float = 0.0
         var freq = frequency
         var ints = self.intensity
+      
+        objc_sync_enter(frequencyController)
         if(frequencyController != nil){
             if frequencyController is Oscillator{
                 let freqOsc = frequencyController as! Oscillator
                 freq = freqOsc.getOutput(self.frequency, index:index)
                 }
             }
+        
+        objc_sync_exit(frequencyController)
+        
+        objc_sync_enter(intensityController)
         if(intensityController != nil){
             if intensityController is Oscillator{
                 let intsOsc = intensityController as! Oscillator
@@ -63,6 +69,7 @@ class Oscillator: SoundModule{
             }
             // intensity controller can also be env. gen.
         }
+        objc_sync_exit(intensityController)
         
         switch waveForm! {
             case BasicWaves.Sine:

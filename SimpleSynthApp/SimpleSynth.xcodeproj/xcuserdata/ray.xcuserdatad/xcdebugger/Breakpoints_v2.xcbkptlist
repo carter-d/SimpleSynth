@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SimpleSynth/Oscillator.swift"
-            timestampString = "502597043.38799"
+            timestampString = "502776755.328409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "getOutput(_:index:)"
             landmarkType = "5">
          </BreakpointContent>

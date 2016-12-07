@@ -86,14 +86,20 @@ class SettingViewController: UIViewController {
         let temp = UIInterfaceOrientation.LandscapeLeft.rawValue
         UIDevice.currentDevice().setValue(temp, forKey: "orientation")
         
+              // Do any additional setup after loading the view, typically from a nib.
+        let feedVC = self.tabBarController?.viewControllers![2] as! FeedViewController
+//        feedVC.setUpSharing()
+//        print(feedVC)
         
-        // Do any additional setup after loading the view, typically from a nib.
+        print("loaded settingVC")
+       // feedVC.viewDidLoad()
+        setUpSharing()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    func setUpSharing(){
+        self.tabBarController?.selectedIndex = 2
+        self.tabBarController?.selectedIndex = 1
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -246,7 +252,6 @@ class SettingViewController: UIViewController {
        //     mb.theBoard.append(baseOsc)
         //    exampleSynth.mb = mb
             exampleSynth.playSoundFromModule()
-            print(exampleSynth.mb.theBoard.count)
         case .None:
             print("none")
         }

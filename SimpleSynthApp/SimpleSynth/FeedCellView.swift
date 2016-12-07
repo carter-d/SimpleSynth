@@ -22,6 +22,6 @@ class FeedCellView: UICollectionViewCell {
     func updateUI(){
         Poster.image = UIImage(named: "Play")
         Title.text = "Try Me!"
+        self.Title.textColor = UIColor.orangeColor()
     }
- 
 }
