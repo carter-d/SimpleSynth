@@ -1,0 +1,1 @@
+ const unsigned char Pods_SimpleSynthVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_SimpleSynth  PROJECT:Pods-1" "\n"; const double Pods_SimpleSynthVersionNumber __attribute__ ((used)) = (double)1.;

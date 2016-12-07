@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/build/Debug-iphonesimulator/EVReflection/EVReflection.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/build/Pods.build/Debug-iphonesimulator/EVReflection.build/unextended-module.modulemap',
+    }]
+  }]
+}

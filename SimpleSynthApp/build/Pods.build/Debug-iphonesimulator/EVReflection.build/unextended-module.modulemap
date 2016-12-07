@@ -1,0 +1,10 @@
+framework module EVReflection {
+  umbrella header "EVReflection-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module EVReflection.__Swift {
+    exclude header "EVReflection-Swift.h"
+}

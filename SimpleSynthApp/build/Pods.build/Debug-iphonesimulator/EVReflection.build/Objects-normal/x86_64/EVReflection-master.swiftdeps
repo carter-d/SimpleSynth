@@ -1,0 +1,8 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.8 clang-703.0.31)"
+options: "f97bc226bf108317315f2e37ed4bfbdb"
+build_time: [534375230, 607650000]
+inputs:
+  "/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/Pods/EVReflection/EVReflection/pod/EVExtensions.swift": [534374550, 0]
+  "/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/Pods/EVReflection/EVReflection/pod/EVObject.swift": [534374550, 0]
+  "/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/Pods/EVReflection/EVReflection/pod/EVReflection.swift": [534374550, 0]
+  "/Users/ray/Desktop/438 Ray/finalSimpleSynth/SimpleSynth/SimpleSynthApp/Pods/EVReflection/EVReflection/pod/EVWorkaroundHelpers.swift": [534374550, 0]
